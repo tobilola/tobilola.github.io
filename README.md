@@ -1,4 +1,4 @@
-# tobiogunbowale.github.io
+# tobilola.github.io
 
 ## 👩🏽‍💻 Tobi Ogunbowale – Digital Health Solutions Lead
 
@@ -11,7 +11,7 @@ Welcome to the source code for my personal portfolio website. This site showcase
 ---
 
 ## 🌐 Live Website  
-🔗 [https://tobiogunbowale.github.io](https://tobiogunbowale.github.io)
+🔗 [https://tobilola.github.io](https://tobilola.github.io)
 
 ## 📄 Resume  
 📎 [View My Resume](https://drive.google.com/file/d/1M0-cMGqlrD077OrGUsRGZLgPv9SB29Yl/view?usp=drive_link)
