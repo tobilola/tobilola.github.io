@@ -41,7 +41,7 @@ This portfolio is a fully responsive website built with:
 
 ## 🚀 Deployment
 Hosted via **GitHub Pages** from the `main` branch.  
-Live at: [https://tobiogunbowale.github.io](https://tobiogunbowale.github.io)
+Live at: [https://tobiogunbowale.github.io](https://tobilola.github.io)
 
 ## 🛠 Usage
 Explore, fork, or adapt this project structure for your own professional portfolio.
