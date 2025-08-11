@@ -24,96 +24,107 @@
   </script>
 
   <style>
-    /* ==== Base / Theme (from your readjustment) ==== */
+    /* ==== Brand Palette ==== 
+       Ink:   #003366
+       Teal:  #008080
+       Mist:  #E6F7F8
+       Light: #F4F4F4
+       Text:  #333333
+    */
+
+    /* Base / Theme */
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#333;line-height:1.6;overflow-x:hidden}
-    .navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(15px);border-bottom:1px solid rgba(102,126,234,.1);z-index:1000;transition:all .3s}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#333333;line-height:1.6;overflow-x:hidden;background:#F4F4F4}
+
+    /* Navbar */
+    .navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(15px);border-bottom:1px solid #E6F7F8;z-index:1000;transition:all .3s}
     .nav-container{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:70px}
-    .logo{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .logo{font-size:1.5rem;font-weight:800;color:#003366;letter-spacing:.5px}
     .nav-links{display:flex;list-style:none;gap:30px}
-    .nav-links a{text-decoration:none;color:#333;font-weight:500;transition:all .3s;position:relative}
-    .nav-links a:hover{color:#667eea}
-    .nav-links a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);transition:width .3s}
+    .nav-links a{text-decoration:none;color:#333333;font-weight:500;transition:color .2s ease;position:relative}
+    .nav-links a:hover{color:#008080}
+    .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#008080;transition:width .25s}
     .nav-links a:hover::after{width:100%}
     .mobile-menu{display:none;flex-direction:column;cursor:pointer}
-    .mobile-menu span{width:25px;height:3px;background:#667eea;margin:3px 0;transition:.3s;border-radius:2px}
+    .mobile-menu span{width:25px;height:3px;background:#003366;margin:3px 0;transition:.3s;border-radius:2px}
 
-    .hero{height:100vh;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);animation:heroFloat 8s ease-in-out infinite}
-    @keyframes heroFloat{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(180deg) scale(1.1)}}
+    /* Hero */
+    .hero{height:100vh;background:#003366;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative;overflow:hidden}
     .hero-content{max-width:900px;position:relative;z-index:2;padding:0 20px}
     .hero h1{font-size:3.2rem;font-weight:900;margin-bottom:16px;letter-spacing:-.02em}
     .hero .subtitle{font-size:1.5rem;font-weight:600;margin-bottom:10px;opacity:.95}
     .hero .tagline{font-size:1.15rem;opacity:.95;margin-bottom:28px}
     .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .btn{padding:14px 26px;border-radius:30px;text-decoration:none;font-weight:700;transition:all .3s;display:inline-block;text-align:center;border:2px solid transparent}
-    .btn-primary{background:#fff;color:#667eea;box-shadow:0 8px 25px rgba(0,0,0,.1)}
-    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(0,0,0,.2)}
+    .btn{padding:14px 26px;border-radius:30px;text-decoration:none;font-weight:800;transition:all .25s;display:inline-block;text-align:center;border:2px solid transparent}
+    .btn-primary{background:#008080;color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.12)}
+    .btn-primary:hover{background:#006e6e;transform:translateY(-2px)}
     .btn-outline{background:transparent;color:#fff;border:2px solid #fff}
-    .btn-outline:hover{background:#fff;color:#667eea;transform:translateY(-3px)}
+    .btn-outline:hover{background:#fff;color:#003366;transform:translateY(-2px)}
     .hero .small-contact{font-size:.95rem;opacity:.95;margin-top:18px}
 
+    /* Sections */
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    .section-title{font-size:2.2rem;font-weight:900;text-align:center;margin-bottom:48px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;position:relative}
-    .section-title::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:100px;height:4px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:2px}
-
     .section{padding:90px 0}
+    .section-title{font-size:2.2rem;font-weight:900;text-align:center;margin-bottom:48px;color:#003366;position:relative}
+    .section-title::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:120px;height:3px;background:#008080;border-radius:2px}
 
     /* Exec Profile */
-    .about{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%)}
+    .about{background:linear-gradient(0deg,#FFFFFF 0%, #F4F4F4 100%)}
     .about-grid{display:grid;grid-template-columns:2fr 1fr;gap:50px;align-items:center}
     .about p{font-size:1.08rem;color:#2d3748;margin-bottom:16px}
     .stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .stat-card{background:#fff;padding:26px;border-radius:18px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.08);border:2px solid rgba(102,126,234,.1)}
-    .stat-number{font-size:2.1rem;font-weight:900;color:#667eea;display:block}
-    .stat-label{font-size:.95rem;color:#666;font-weight:600}
+    .stat-card{background:#fff;padding:26px;border-radius:18px;text-align:center;box-shadow:0 10px 24px rgba(0,0,0,.06);border:2px solid #E6F7F8}
+    .stat-number{font-size:2.1rem;font-weight:900;color:#003366;display:block}
+    .stat-label{font-size:.95rem;color:#666;font-weight:700}
 
     /* Competencies */
     .competencies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
-    .card-soft{background:linear-gradient(135deg,rgba(102,126,234,.05) 0%,rgba(118,75,162,.05) 100%);border:2px solid rgba(102,126,234,.12);border-radius:18px;padding:28px}
-    .card-soft h3{font-size:1.25rem;font-weight:800;margin-bottom:10px}
+    .card-soft{background:#FFFFFF;border:2px solid #E6F7F8;border-radius:18px;padding:28px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+    .card-soft h3{font-size:1.25rem;font-weight:800;margin-bottom:10px;color:#003366}
     .card-soft ul{list-style:none}
     .card-soft li{padding:9px 0;padding-left:28px;position:relative}
-    .card-soft li::before{content:'🚀';position:absolute;left:0;top:2px}
+    .card-soft li::before{content:'▸';position:absolute;left:0;top:4px;color:#008080;font-weight:900}
 
     /* TOBI Framework */
     .framework-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .fw-card{background:#fff;border:2px solid rgba(102,126,234,.12);border-radius:18px;padding:20px;text-align:center}
+    .fw-card{background:#fff;border:2px solid #E6F7F8;border-radius:18px;padding:20px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.05)}
     .fw-dot{width:42px;height:42px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff}
-    .fw-t{background:#0b2a55}.fw-o{background:#00a3a3}.fw-b{background:#6dbf00}.fw-i{background:#0b2a55}
+    .fw-t{background:#003366}.fw-o{background:#008080}.fw-b{background:#66A366}.fw-i{background:#003366}
 
     /* Case Studies */
-    .cases{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%)}
+    .cases{background:linear-gradient(0deg,#F4F4F4 0%, #FFFFFF 100%)}
     .cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:26px}
-    .case{background:#fff;border:2px solid rgba(102,126,234,.12);border-radius:20px;padding:26px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+    .case{background:#fff;border:2px solid #E6F7F8;border-radius:20px;padding:26px;box-shadow:0 10px 24px rgba(0,0,0,.06)}
     .metrics{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px}
-    .badge{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:6px 12px;border-radius:999px;font-size:.9rem;font-weight:700}
+    .badge{background:#008080;color:#fff;padding:6px 12px;border-radius:999px;font-size:.9rem;font-weight:800}
+    .case h3{color:#003366}
     .case ul{list-style:none}
     .case li{padding:8px 0;padding-left:28px;position:relative}
-    .case li::before{content:'🎯';position:absolute;left:0;top:6px}
+    .case li::before{content:'✔';position:absolute;left:0;top:6px;color:#008080;font-weight:900}
 
     /* Platform Suite */
-    .suite .tool{background:#fff;border:2px solid rgba(102,126,234,.12);border-radius:18px;padding:22px}
-    .tool h4{font-size:1.15rem;font-weight:800;margin-bottom:6px}
+    .suite .tool{background:#fff;border:2px solid #E6F7F8;border-radius:18px;padding:22px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+    .tool h4{font-size:1.15rem;font-weight:900;margin-bottom:6px;color:#003366}
     .tool ul{margin:8px 0 8px 18px}
-    .tool a{color:#007f80;text-decoration:none;font-weight:700}
+    .tool a{color:#008080;text-decoration:none;font-weight:800}
     .tool a:hover{text-decoration:underline}
 
     /* Insights */
     .insights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
-    .insight{background:#f4f6fb;border:1px solid rgba(102,126,234,.12);border-radius:16px;padding:18px}
+    .insight{background:#E6F7F8;border:1px solid #E6F7F8;border-radius:16px;padding:18px}
+    .insight h4{color:#003366}
 
     /* Certifications */
     .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-    .cert{background:#fff;border:2px solid rgba(102,126,234,.12);border-radius:16px;padding:22px;text-align:center}
-    .cert .when{color:#667eea;font-weight:700}
+    .cert{background:#fff;border:2px solid #E6F7F8;border-radius:16px;padding:22px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+    .cert .when{color:#008080;font-weight:800}
 
     /* Contact */
-    .contact{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;text-align:center}
+    .contact{background:#003366;color:#fff;text-align:center}
     .contact .links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
     .contact .links a{color:#fff;text-decoration:none;padding:12px 22px;border:2px solid #fff;border-radius:30px;font-weight:800}
-    .contact .links a:hover{background:#fff;color:#667eea}
+    .contact .links a:hover{background:#fff;color:#003366}
 
     /* Responsive */
     @media (max-width: 900px){
@@ -263,7 +274,7 @@
         <!-- Case 1 -->
         <div class="case">
           <h3 style="font-size:1.3rem;font-weight:900;margin-bottom:6px">🏢 Enterprise Laboratory Transformation</h3>
-          <p class="case-context"><strong>Strategic Context:</strong> National COVID-19 scale-up across multiple sites requiring enterprise coordination and technology deployment.</p>
+          <p><strong>Strategic Context:</strong> National COVID-19 scale-up across multiple sites requiring enterprise coordination and technology deployment.</p>
           <div class="metrics">
             <span class="badge">1M+ Samples</span>
             <span class="badge">50% Faster TAT</span>
@@ -273,10 +284,10 @@
           <ul>
             <li>Led cross-functional LIMS/LIS deployment across multi-site operations</li>
             <li>Reduced turnaround time by 50% while maintaining 95% accuracy</li>
-            <li>Built & managed a 15+ person high-performance interdisciplinary team</li>
+            <li>Built & managed a 15+ person interdisciplinary team</li>
             <li>Contributed strategic leadership to secure multi-million dollar contract</li>
           </ul>
-          <div style="margin-top:10px;font-size:.92rem;color:#4a5;opacity:.9">
+          <div style="margin-top:10px;font-size:.92rem;color:#008080;opacity:.95">
             <strong>Role:</strong> Program Leadership & Strategic Execution · <strong>Stack:</strong> LIMS/LIS, DMAIC, Lean
           </div>
         </div>
@@ -284,7 +295,7 @@
         <!-- Case 2 -->
         <div class="case">
           <h3 style="font-size:1.3rem;font-weight:900;margin-bottom:6px">📊 Research Portfolio Optimization</h3>
-          <p class="case-context"><strong>Strategic Context:</strong> $2M NIH research portfolio lacked operational visibility and performance analytics.</p>
+          <p><strong>Strategic Context:</strong> $2M NIH research portfolio lacked operational visibility and performance analytics.</p>
           <div class="metrics">
             <span class="badge">$2M Portfolio</span>
             <span class="badge">20% Better Forecasting</span>
@@ -297,7 +308,7 @@
             <li>Maintained 100% IRB/HIPAA/IACUC compliance across programs</li>
             <li>Enhanced stakeholder reporting & federal submissions</li>
           </ul>
-          <div style="margin-top:10px;font-size:.92rem;color:#4a5;opacity:.9">
+          <div style="margin-top:10px;font-size:.92rem;color:#008080;opacity:.95">
             <strong>Role:</strong> Portfolio Ops & Analytics Leadership · <strong>Stack:</strong> Python, Excel, Governance
           </div>
         </div>
@@ -384,7 +395,7 @@
         </div>
         <div class="cert">
           <div class="cert-name"><strong>Health Informatics</strong></div>
-          <div class="when">CAHIMS · CPHIMS · CHDA (in progress)</div>
+          <div class="when">CPHIMS (in progress) · CHDA (in progress)</div>
         </div>
         <div class="cert">
           <div class="cert-name"><strong>Standards & Cloud</strong></div>
@@ -392,7 +403,7 @@
         </div>
         <div class="cert">
           <div class="cert-name"><strong>Process Improvement & AI</strong></div>
-          <div class="when">Lean Six Sigma · Stanford GenAI · MIT AI Strategy · NVIDIA Gen AI (2026)</div>
+          <div class="when">Lean Six Sigma · NVIDIA Gen AI (2026)</div>
         </div>
       </div>
     </div>
@@ -401,7 +412,7 @@
   <!-- CONTACT -->
   <section id="contact" class="contact section">
     <div class="container" style="max-width:760px;text-align:center">
-      <h2 class="section-title" style="-webkit-text-fill-color:#fff;background:none">Contact</h2>
+      <h2 class="section-title" style="color:#fff">Contact</h2>
       <p style="font-size:1.08rem;margin:0 auto 14px;max-width:640px">
         I’d love to collaborate or discuss roles in digital health transformation, lab systems, or AI-driven operations.
       </p>
@@ -419,10 +430,9 @@
     const nav = document.getElementById('nav-links');
     burger && burger.addEventListener('click', () => {
       if (nav.style.display === 'flex') { nav.style.display = 'none'; }
-      else { nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.gap='18px'; }
+      else { nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.gap='18px'; nav.style.background='#ffffff'; nav.style.padding='16px 24px'; }
     });
-
-    // Close menu on link click (mobile)
+    // Close on link click (mobile)
     document.querySelectorAll('#nav-links a').forEach(a=>{
       a.addEventListener('click',()=>{ if (window.innerWidth < 900) nav.style.display='none'; })
     });
