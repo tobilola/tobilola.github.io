@@ -46,16 +46,22 @@
       z-index:1000;transition:all .3s
     }
     .nav-container{
-      max-width:1200px;margin:0 auto;padding:0 24px;
+      max-width:1200px;margin:0 auto;padding:0 20px;
       display:flex;justify-content:space-between;align-items:center;height:70px
     }
-    .logo{font-size:1.5rem;font-weight:800;color:#003366;letter-spacing:.5px;white-space:nowrap}
+    .logo{font-size:1.45rem;font-weight:800;color:#003366;letter-spacing:.5px;white-space:nowrap}
+
+    /* >>> One-line nav, no wrap, tighter spacing <<< */
     .nav-links{
-      display:flex;list-style:none;gap:24px;flex-wrap:wrap;
+      display:flex;list-style:none;
       align-items:center;justify-content:flex-end;
-      max-width:100%;
+      gap:18px;             /* spacing between items */
+      white-space:nowrap;   /* keep on one line */
+      font-size:.95rem;     /* slightly smaller to fit */
+      flex:1 1 auto;        /* allow it to use remaining space */
+      margin-left:16px;
     }
-    .nav-links li{white-space:nowrap}
+    .nav-links li{display:inline-block}
     .nav-links a{
       text-decoration:none;color:#333333;font-weight:500;
       transition:color .2s ease;position:relative;padding:6px 0
@@ -101,7 +107,6 @@
       object-fit:cover;aspect-ratio:1/1;
       background:#E6F7F8;
     }
-    /* Placeholder ring if no image yet */
     .headshot-placeholder{
       width:320px;height:320px;border-radius:50%;
       border:5px dashed #E6F7F8;opacity:.8
@@ -170,16 +175,27 @@
     .contact .links a{color:#fff;text-decoration:none;padding:12px 22px;border:2px solid #fff;border-radius:30px;font-weight:800}
     .contact .links a:hover{background:#fff;color:#003366}
 
-    /* Responsive */
-    @media (max-width: 1100px){
-      .nav-links{gap:18px}
+    /* Responsive tightening for nav to keep single line longer */
+    @media (max-width: 1200px){
+      .nav-container{padding:0 16px}
+      .logo{font-size:1.35rem}
+      .nav-links{gap:16px;font-size:.92rem}
     }
+    @media (max-width: 1100px){
+      .logo{font-size:1.25rem}
+      .nav-links{gap:14px;font-size:.9rem}
+    }
+    @media (max-width: 1000px){
+      .logo{font-size:1.2rem}
+      .nav-links{gap:12px;font-size:.87rem}
+    }
+    /* Mobile: switch to hamburger */
     @media (max-width: 900px){
+      .nav-links{display:none}
+      .mobile-menu{display:flex}
       .about-grid{grid-template-columns:1fr}
       .framework-grid{grid-template-columns:repeat(2,1fr)}
       .cases-grid{grid-template-columns:1fr}
-      .nav-links{display:none}
-      .mobile-menu{display:flex}
       .hero{grid-template-columns:1fr;text-align:center}
       .hero-buttons{justify-content:center}
       .hero-headshot{margin-top:24px}
@@ -222,7 +238,7 @@
       <div class="small-contact">📧 hello@tobiogunbowale.com &nbsp;|&nbsp; 🔗 LinkedIn: /in/oluwatobilolaogunbowale</div>
     </div>
     <div class="hero-headshot">
-      <!-- If you have a headshot, replace src with your image path -->
+      <!-- Replace with your headshot path when ready -->
       <!-- <img src="images/tobi-headshot.jpg" alt="Tobi Ogunbowale Headshot"> -->
       <div class="headshot-placeholder" aria-label="Headshot placeholder"></div>
     </div>
@@ -322,7 +338,6 @@
     <div class="container">
       <h2 class="section-title">Executive Case Studies: Transformational Impact</h2>
       <div class="cases-grid">
-        <!-- Case 1 -->
         <div class="case">
           <h3 style="font-size:1.3rem;font-weight:900;margin-bottom:6px">🏢 Enterprise Laboratory Transformation</h3>
           <p><strong>Strategic Context:</strong> National COVID-19 scale-up across multiple sites requiring enterprise coordination and technology deployment.</p>
@@ -343,7 +358,6 @@
           </div>
         </div>
 
-        <!-- Case 2 -->
         <div class="case">
           <h3 style="font-size:1.3rem;font-weight:900;margin-bottom:6px">📊 Research Portfolio Optimization</h3>
           <p><strong>Strategic Context:</strong> $2M NIH research portfolio lacked operational visibility and performance analytics.</p>
