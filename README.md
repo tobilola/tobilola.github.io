@@ -1,172 +1,201 @@
-# tobilola.github.io
+# Fully Responsive Portfolio Website
 
-## Professional Portfolio - Lab Informatics × AI Engineering
+## Features
 
-Welcome to my professional portfolio showcasing my journey from laboratory science to AI-powered healthcare innovation.
+### Responsive Design
+- **Desktop (1024px+):** Full navigation bar, optimal reading width
+- **Tablet (768px - 1024px):** Adjusted spacing, readable on iPads
+- **Mobile (< 768px):** Hamburger menu, single-column layout, touch-friendly
+- **Small Mobile (< 480px):** Optimized for iPhone SE and small screens
 
-**Live Site:** [https://tobilola.github.io](https://tobilola.github.io)
+### Mobile Menu
+- Hamburger icon (3 lines) on mobile devices
+- Smooth slide-down animation
+- Closes when clicking a link
+- Closes when clicking outside menu
+- Works perfectly on all phones and tablets
 
----
+### Professional Features
+- Smooth scroll navigation
+- Fade-in animations on scroll
+- Active link highlighting
+- Touch-friendly buttons
+- Clean, readable text on all devices
 
-## About This Portfolio
+## What Works On
 
-A comprehensive portfolio highlighting 10+ years of experience spanning:
-- Laboratory operations and molecular diagnostics
-- Digital health project management (CAPM certified)
-- Population health research and data analytics
-- AI/ML engineering for healthcare applications
-- Laboratory informatics systems (LIMS/LIS)
+- **iPhone** (all models)
+- **Android phones** (all sizes)
+- **iPad** (all models)
+- **Android tablets**
+- **Laptops** (Mac, Windows, Linux)
+- **Desktop computers**
 
----
+## Files Included
 
-## What's Inside
+- `index.html` - Main page with mobile menu
+- `styles.css` - Fully responsive styling
+- `script.js` - Mobile menu toggle and animations
+- `README.md` - This file
 
-### Journey Timeline
-Visual narrative of my career progression:
-- **Microbiology Foundation** → Lab bench work (PCR, ELISA, molecular diagnostics)
-- **Data Analytics Awakening** → International research, Python/R analytics
-- **Project Management & Quality** → COVID-19 scaling, LIMS deployment
-- **Machine Learning Innovation** → Production ML systems
-- **Lab Informatics Vision** → AI-powered laboratory automation
+## Testing Locally
 
-### Featured Projects
+### Open in Browser
+Just double-click `index.html` and it opens in your browser.
 
-**Medical AI Agent** | [GitHub](https://github.com/tobilola/medical-ai-agent) | [Demo](https://medical-ai-agent.onrender.com)
-- Autonomous AI agent with multi-step reasoning
-- 5 clinical tools (PubMed search, drug interactions, SOAP notes)
-- RAG architecture with vector database
-- Tech: LangChain, GPT-4, ChromaDB, FastAPI
+### Test Responsive Design
+1. Open the page in Chrome or Firefox
+2. Press **F12** to open Developer Tools
+3. Click the **phone icon** (top left of dev tools)
+4. Select different devices from dropdown:
+   - iPhone SE (small phone)
+   - iPhone 12 Pro (medium phone)
+   - iPad (tablet)
+   - Desktop
 
-**Requiva Lab Management System** | [GitHub](https://github.com/tobilola/Requiva) | [Demo](https://requiva.onrender.com)
-- Production system used by University at Buffalo lab
-- 5 ML models for predictive ordering and spending forecasts
-- NIH grant compliance tracking
-- Tech: Python, Streamlit, Firebase, Scikit-learn
+### Test Mobile Menu
+1. Resize browser window to mobile size (< 768px)
+2. You should see hamburger menu (3 lines)
+3. Click it - menu drops down
+4. Click a link - menu closes automatically
+5. Click hamburger again - menu closes
 
-**LIMS-ELN Integration Platform** | [GitHub](https://github.com/tobilola/LIMS-ELN_Integration)
-- Middleware for bidirectional data synchronization
-- 3 ML models (anomaly detection, entity extraction, compliance scoring)
-- Processes 1000+ samples daily
-- Tech: FastAPI, PostgreSQL, MongoDB, Docker
+## Deploy to GitHub Pages
 
-**Regulatory Compliance Tracker** | [GitHub](https://github.com/tobilola/compliance-tracker)
-- Automated compliance monitoring with OCR + NLP
-- 5 ML models achieving 94.5% accuracy
-- Real-time dashboard for FDA 21 CFR Part 11, GLP, ISO 17025
-- Tech: Tesseract OCR, Scikit-learn, spaCy, React
+### Step 1: Create GitHub Repo
 
-### Technical Expertise
-- **AI & ML:** LangChain, GPT-4, Scikit-learn, RAG systems, Time-series forecasting
-- **Laboratory Informatics:** LIMS/LIS (EPIC Beaker, Cerner), Laboratory automation
-- **Cloud & DevOps:** Google Cloud Platform, Docker, CI/CD
-- **Compliance:** HIPAA, CLIA, FDA 21 CFR Part 11, GLP, IRB, IACUC
-- **Project Management:** CAPM certified, Agile/Scrum, Lean Six Sigma
+```bash
+cd C:\Users\ogunb\Desktop\Projects
+mkdir portfolio
+cd portfolio
 
----
+# Copy all files here (index.html, styles.css, script.js)
 
-## Design Features
-
-**Exceptional User Experience:**
-- Dark mode aesthetic (midnight blue + electric teal)
-- Professional inline SVG icons
-- Fully responsive with mobile hamburger menu
-- Smooth animations and scroll effects
-- Custom gradient effects and hover interactions
-- Integrated resume download
-
-**Technical Implementation:**
-- Single-file architecture (all CSS/JS inline)
-- Zero dependencies (no frameworks, no build process)
-- Optimized performance (60fps animations)
-- Accessible navigation and semantic HTML
-- Professional typography (Playfair Display + Space Mono + DM Sans)
-
----
-
-## Repository Structure
-
-```
-tobilola.github.io/
-├── index.html                          # Complete portfolio (HTML + CSS + JS)
-├── Tobilola_Ogunbowale_Resume.pdf     # Professional resume
-└── README.md                           # This file
+git init
+git add .
+git commit -m "Fully responsive portfolio with mobile menu"
 ```
 
+### Step 2: Push to GitHub
+
+Create repo at https://github.com/new
+- Name: `portfolio`
+- Public
+- Don't initialize with anything
+
+```bash
+git remote add origin https://github.com/tobilola/portfolio.git
+git branch -M main
+git push -u origin main
+```
+
+### Step 3: Enable GitHub Pages
+
+1. Go to your repo
+2. Click **Settings**
+3. Click **Pages** (left sidebar)
+4. Under "Source", select **main** branch
+5. Click **Save**
+6. Wait 1-2 minutes
+
+Live at: `https://tobilola.github.io/portfolio`
+
+## Test Your Live Site
+
+### On Desktop
+Just visit the URL in any browser.
+
+### On Mobile Phone
+1. Open the URL on your phone
+2. Test the hamburger menu
+3. Test all links
+4. Scroll through all sections
+5. Try landscape and portrait mode
+
+### On Tablet
+1. Open the URL on iPad/Android tablet
+2. Menu should still work
+3. Layout should be comfortable to read
+
+## Update Patient Health Dashboard Link
+
+After deploying Patient Health Dashboard, update line 69 in `index.html`:
+
+```html
+<!-- Change this: -->
+<a href="https://your-app.netlify.app" target="_blank">Live Demo</a>
+
+<!-- To your actual URL: -->
+<a href="https://your-actual-app.netlify.app" target="_blank">Live Demo</a>
+```
+
+Then push update:
+```bash
+git add index.html
+git commit -m "Update live demo link"
+git push
+```
+
+## Responsive Breakpoints
+
+The design adapts at these screen sizes:
+- **1024px and above:** Desktop layout
+- **768px - 1024px:** Tablet layout  
+- **480px - 768px:** Mobile layout
+- **Below 480px:** Small mobile layout
+
+## Browser Support
+
+Works on:
+- Chrome (desktop, mobile)
+- Firefox (desktop, mobile)
+- Safari (desktop, iOS)
+- Edge (desktop, mobile)
+- Samsung Internet
+- Opera
+
+## Mobile Menu Behavior
+
+**On Desktop (> 768px):**
+- Normal horizontal menu bar
+- No hamburger icon
+
+**On Mobile/Tablet (< 768px):**
+- Hamburger icon appears (3 lines)
+- Menu hidden by default
+- Click hamburger → menu slides down
+- Click link → menu closes automatically
+- Click outside → menu closes
+- Smooth animations
+
+## Common Issues
+
+### Menu not working?
+- Check JavaScript is loaded (script.js)
+- Check browser console for errors (F12)
+- Try clearing browser cache
+
+### Not responsive on phone?
+- Check viewport meta tag in HTML
+- Test in browser dev tools first
+- Try different browsers
+
+### Text too small on mobile?
+- Font sizes automatically adjust
+- Minimum font size: 0.85rem
+- Should be readable on all devices
+
+## For Job Applications
+
+**Portfolio URL:** https://tobilola.github.io/portfolio
+
+**Features to mention:**
+- Fully responsive (mobile, tablet, desktop)
+- Mobile-first design
+- Hamburger menu navigation
+- Smooth scroll and animations
+- Production-ready front-end
+
 ---
 
-## Deployment
-
-**Platform:** GitHub Pages  
-**Branch:** `main`  
-**Build:** Automatic deployment on push
-
-The site is automatically deployed via GitHub Pages whenever changes are pushed to the `main` branch.
-
----
-
-## Professional Background
-
-**Current:** Research Systems Operations Manager | University at Buffalo  
-**Experience:** 10+ years in laboratory operations, digital health, and AI engineering
-
-**Career Highlights:**
-- Processed 1M+ diagnostic samples during COVID-19 pandemic
-- Managed $2M+ research portfolio with AI-powered automation
-- Led international health research across Nigeria and Germany
-- Built production ML systems currently in use at research institutions
-- Achieved 95% user adoption on enterprise LIMS implementations
-
----
-
-## Key Achievements
-
-- **CAPM Certification** - Project Management Institute
-- **MS Biomedical Informatics** - University at Buffalo (2023)
-- **MS Medical Microbiology** - University of Lagos (2016)
-- **1M+ Samples Processed** - COVID-19 laboratory transformation
-- **60% Cost Reduction** - AI-powered operational optimization
-- **20% Better Forecasting** - ML-driven portfolio analytics
-- **94.5% Model Accuracy** - Production ML compliance system
-
----
-
-## Connect
-
-- **LinkedIn:** [linkedin.com/in/tobiogunbowale](https://linkedin.com/in/tobiogunbowale)
-- **GitHub:** [github.com/tobilola](https://github.com/tobilola)
-- **Email:** hello@tobiogunbowale.com
-- **Phone:** (716) 730-0941
-
----
-
-## License
-
-© 2025 Tobilola Ogunbowale. All rights reserved.
-
-This portfolio is proprietary. The code structure and design may be used as inspiration, but please create your own unique implementation.
-
----
-
-## Built With
-
-- **HTML5** - Semantic markup
-- **CSS3** - Custom animations, gradients, responsive design
-- **Vanilla JavaScript** - Smooth scroll, mobile menu, reveal animations
-- **SVG** - Professional inline icons
-- **Google Fonts** - Playfair Display, Space Mono, DM Sans
-
----
-
-## Feedback
-
-Found a bug or have a suggestion? Feel free to open an issue or reach out directly.
-
----
-
-**Positioning for:** Senior Lab Informatics Engineer | AI Product Manager (Healthcare) | Healthcare AI Engineering Roles
-
-**Specialization:** Building intelligent systems that transform laboratory operations through AI/ML while maintaining regulatory compliance.
-
----
-
-*Last Updated: January 2025*
+**Your portfolio now looks professional on EVERY device!**
