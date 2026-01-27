@@ -119,23 +119,6 @@ Just visit the URL in any browser.
 
 ## Update Patient Health Dashboard Link
 
-After deploying Patient Health Dashboard, update line 69 in `index.html`:
-
-```html
-<!-- Change this: -->
-<a href="https://your-app.netlify.app" target="_blank">Live Demo</a>
-
-<!-- To your actual URL: -->
-<a href="https://your-actual-app.netlify.app" target="_blank">Live Demo</a>
-```
-
-Then push update:
-```bash
-git add index.html
-git commit -m "Update live demo link"
-git push
-```
-
 ## Responsive Breakpoints
 
 The design adapts at these screen sizes:
@@ -168,22 +151,6 @@ Works on:
 - Click outside → menu closes
 - Smooth animations
 
-## Common Issues
-
-### Menu not working?
-- Check JavaScript is loaded (script.js)
-- Check browser console for errors (F12)
-- Try clearing browser cache
-
-### Not responsive on phone?
-- Check viewport meta tag in HTML
-- Test in browser dev tools first
-- Try different browsers
-
-### Text too small on mobile?
-- Font sizes automatically adjust
-- Minimum font size: 0.85rem
-- Should be readable on all devices
 
 ## For Job Applications
 
@@ -198,4 +165,3 @@ Works on:
 
 ---
 
-**Your portfolio now looks professional on EVERY device!**
