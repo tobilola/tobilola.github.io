@@ -1308,6 +1308,7 @@
           Production System - In Active Use
         </span>
       </div>
+      </div>
 
       <div class="project-card reveal">
         <div class="project-tag">
@@ -1599,4 +1600,15 @@
     const revealOnScroll = () => {
       const windowHeight = window.innerHeight;
       revealElements.forEach(el => {
-        const elementTop = el.getBoundingC
+        const elementTop = el.getBoundingClientRect();
+        if (elementTop < windowHeight * 0.8) {
+          el.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>
