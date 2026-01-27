@@ -62,41 +62,6 @@ Just double-click `index.html` and it opens in your browser.
 
 ## Deploy to GitHub Pages
 
-### Step 1: Create GitHub Repo
-
-```bash
-cd C:\Users\ogunb\Desktop\Projects
-mkdir portfolio
-cd portfolio
-
-# Copy all files here (index.html, styles.css, script.js)
-
-git init
-git add .
-git commit -m "Fully responsive portfolio with mobile menu"
-```
-
-### Step 2: Push to GitHub
-
-Create repo at https://github.com/new
-- Name: `portfolio`
-- Public
-- Don't initialize with anything
-
-```bash
-git remote add origin https://github.com/tobilola/portfolio.git
-git branch -M main
-git push -u origin main
-```
-
-### Step 3: Enable GitHub Pages
-
-1. Go to your repo
-2. Click **Settings**
-3. Click **Pages** (left sidebar)
-4. Under "Source", select **main** branch
-5. Click **Save**
-6. Wait 1-2 minutes
 
 Live at: `https://tobilola.github.io/portfolio`
 
