@@ -1,132 +1,86 @@
-# Fully Responsive Portfolio Website
+# Hi, I'm Tobi Ogunbowale
 
-## Features
+I work at the intersection of **Applied AI, Systems Architecture, Digital Transformation, and Product Delivery**.
 
-### Responsive Design
-- **Desktop (1024px+):** Full navigation bar, optimal reading width
-- **Tablet (768px - 1024px):** Adjusted spacing, readable on iPads
-- **Mobile (< 768px):** Hamburger menu, single-column layout, touch-friendly
-- **Small Mobile (< 480px):** Optimized for iPhone SE and small screens
+My background spans more than 10 years across operations, enterprise systems, data, research, and technology delivery. I focus on turning complex workflows into scalable systems, intelligent products, and measurable outcomes.
 
-### Mobile Menu
-- Hamburger icon (3 lines) on mobile devices
-- Smooth slide-down animation
-- Closes when clicking a link
-- Closes when clicking outside menu
-- Works perfectly on all phones and tablets
+## What I Work On
 
-### Professional Features
-- Smooth scroll navigation
-- Fade-in animations on scroll
-- Active link highlighting
-- Touch-friendly buttons
-- Clean, readable text on all devices
+- Applied AI and machine learning
+- Systems architecture and integration
+- Digital transformation
+- Technical product and program delivery
+- Data platforms and automation
+- RAG and agentic AI systems
+- API and workflow integration
+- Operational analytics and decision support
 
-## What Works On
+## Selected Work
 
-- **iPhone** (all models)
-- **Android phones** (all sizes)
-- **iPad** (all models)
-- **Android tablets**
-- **Laptops** (Mac, Windows, Linux)
-- **Desktop computers**
+### Regulatory Compliance Tracker
+AI-powered compliance monitoring platform using OCR and NLP for document classification, compliance scoring, and gap analysis.
 
-## Files Included
+**Tech:** Python, Tesseract OCR, scikit-learn, spaCy, Transformers, React
 
-- `index.html` - Main page with mobile menu
-- `styles.css` - Fully responsive styling
-- `script.js` - Mobile menu toggle and animations
-- `README.md` - This file
+### LIMS / ELN Integration Platform
+Integration architecture for bidirectional data synchronization between enterprise systems, with anomaly detection, entity extraction, and compliance scoring.
 
-## Testing Locally
+**Tech:** FastAPI, PostgreSQL, MongoDB, Docker, scikit-learn, spaCy
 
-### Open in Browser
-Just double-click `index.html` and it opens in your browser.
+### Medical AI Agent
+Agentic decision-support system using multi-step reasoning, RAG architecture, vector search, and specialized tools.
 
-### Test Responsive Design
-1. Open the page in Chrome or Firefox
-2. Press **F12** to open Developer Tools
-3. Click the **phone icon** (top left of dev tools)
-4. Select different devices from dropdown:
-   - iPhone SE (small phone)
-   - iPhone 12 Pro (medium phone)
-   - iPad (tablet)
-   - Desktop
+**Tech:** LangChain, GPT-4, ChromaDB, FastAPI, Streamlit
 
-### Test Mobile Menu
-1. Resize browser window to mobile size (< 768px)
-2. You should see hamburger menu (3 lines)
-3. Click it - menu drops down
-4. Click a link - menu closes automatically
-5. Click hamburger again - menu closes
+### Requiva
+Production operations platform with predictive models for reordering, forecasting, anomaly detection, and vendor optimization.
 
-## Deploy to GitHub Pages
+**Tech:** Python, Streamlit, Firebase, scikit-learn, Pandas
 
+### PneumoniaNet AI
+Computer vision system built with PyTorch, ResNet50, transfer learning, spatial attention, and a complete model training pipeline.
 
-Live at: `https://tobilola.github.io/portfolio`
+**Tech:** PyTorch, torchvision, ResNet50, React, Python
 
-## Test Your Live Site
+## Experience at Scale
 
-### On Desktop
-Just visit the URL in any browser.
+- 10+ years across operations, systems, data, and technology
+- Supported operations processing more than 1M samples
+- Managed a $2M research portfolio
+- Delivered 50% faster operational turnaround
+- Led multi-site systems implementation and workflow transformation
 
-### On Mobile Phone
-1. Open the URL on your phone
-2. Test the hamburger menu
-3. Test all links
-4. Scroll through all sections
-5. Try landscape and portrait mode
+## Technology
 
-### On Tablet
-1. Open the URL on iPad/Android tablet
-2. Menu should still work
-3. Layout should be comfortable to read
+**Languages & Data**  
+Python · SQL · R · Pandas · NumPy
 
-## Update Patient Health Dashboard Link
+**AI & Machine Learning**  
+PyTorch · scikit-learn · LangChain · RAG · NLP · Computer Vision · Agentic AI
 
-## Responsive Breakpoints
+**Systems & Backend**  
+FastAPI · PostgreSQL · MongoDB · Firebase · REST APIs · Docker
 
-The design adapts at these screen sizes:
-- **1024px and above:** Desktop layout
-- **768px - 1024px:** Tablet layout  
-- **480px - 768px:** Mobile layout
-- **Below 480px:** Small mobile layout
+**Product & Delivery**  
+Agile · CAPM · Lean Six Sigma · DMAIC · Stakeholder Management · Process Improvement
 
-## Browser Support
+## What I'm Interested In
 
-Works on:
-- Chrome (desktop, mobile)
-- Firefox (desktop, mobile)
-- Safari (desktop, iOS)
-- Edge (desktop, mobile)
-- Samsung Internet
-- Opera
+I'm interested in opportunities where **technology, systems, data, and operations intersect**, including:
 
-## Mobile Menu Behavior
+- Applied AI
+- Solutions Architecture
+- Systems Architecture
+- Digital Transformation
+- Technical Product Management
+- Technical Program Management
+- AI Solutions and Automation
+- Enterprise Technology
 
-**On Desktop (> 768px):**
-- Normal horizontal menu bar
-- No hamburger icon
+## Connect
 
-**On Mobile/Tablet (< 768px):**
-- Hamburger icon appears (3 lines)
-- Menu hidden by default
-- Click hamburger → menu slides down
-- Click link → menu closes automatically
-- Click outside → menu closes
-- Smooth animations
+**Portfolio:** [tobiogunbowale.com](https://tobiogunbowale.com)
 
+**LinkedIn:** [linkedin.com/in/tobiogunbowale](https://www.linkedin.com/in/tobiogunbowale)
 
-## For Job Applications
-
-**Portfolio URL:** https://tobilola.github.io/portfolio
-
-**Features to mention:**
-- Fully responsive (mobile, tablet, desktop)
-- Mobile-first design
-- Hamburger menu navigation
-- Smooth scroll and animations
-- Production-ready front-end
-
----
-
+**Email:** hello@tobiogunbowale.com
