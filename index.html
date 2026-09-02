@@ -7,7 +7,7 @@
 <title>Tobi Ogunbowale | Applied AI, Systems Architecture &amp; Product Delivery</title>
 <meta content="Tobi Ogunbowale works across applied AI, systems architecture, digital transformation, data products and technical product delivery, grounded in complex scientific and regulated environments." name="description"/>
 <meta content="Tobi Ogunbowale" name="author"/>
-<meta content="#0d1713" name="theme-color"/>
+<meta content="#f3eee3" name="theme-color"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
@@ -485,7 +485,444 @@
 #portfolio.portfolio-hero:after{bottom:-2.6vw}
 .portfolio-section{scroll-margin-top:78px}
 #portfolio{scroll-margin-top:78px}
-</style></head>
+</style>
+<style id="light-old-money-futurist-refresh">
+/* =========================================================
+   LIGHT OLD MONEY × FUTURIST REFRESH
+   Heritage editorial warmth with systems-architecture detail
+   ========================================================= */
+
+:root {
+  --ink: #102019;
+  --ink-2: #172c23;
+  --forest: #173b2d;
+  --forest-2: #255844;
+  --forest-deep: #091710;
+  --ivory: #f5f0e6;
+  --ivory-2: #d9d0bf;
+  --paper: #fbf8f1;
+  --paper-2: #f1ebdf;
+  --brass: #a8874d;
+  --brass-soft: #80663d;
+  --sage: #728b7d;
+  --oxblood: #64353a;
+  --text: #17231d;
+  --text-soft: #5f675f;
+  --line: rgba(62, 72, 63, .16);
+  --line-gold: rgba(168, 135, 77, .32);
+  --line-soft: rgba(50, 64, 55, .10);
+  --glass: rgba(255,255,255,.62);
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(168,135,77,.10), transparent 31rem),
+    radial-gradient(circle at 94% 38%, rgba(37,88,68,.075), transparent 32rem),
+    var(--ivory);
+  color: var(--text);
+}
+
+body::before {
+  opacity: .65;
+  background-image:
+    linear-gradient(rgba(23,59,45,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23,59,45,.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), transparent 92%);
+}
+
+/* Fine technical grain, intentionally subtle */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: .24;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(168,135,77,.18) 0 1px, transparent 1.5px) 0 0 / 84px 84px,
+    radial-gradient(circle at 80% 65%, rgba(23,59,45,.13) 0 1px, transparent 1.5px) 0 0 / 112px 112px;
+}
+
+.eyebrow { color: var(--brass-soft); }
+.section-copy { color: var(--text-soft); }
+
+/* Navigation begins elegantly over the dark hero, then turns into a light glass bar */
+nav {
+  color: var(--ivory);
+}
+nav.scrolled {
+  background: rgba(248,244,235,.90);
+  border-color: rgba(23,59,45,.10);
+  box-shadow: 0 12px 34px rgba(18,34,26,.055);
+}
+nav.scrolled .brand-name { color: var(--forest-deep); }
+nav.scrolled .nav-links a { color: #536057; }
+nav.scrolled .nav-links a:hover { color: var(--brass-soft); }
+nav.scrolled .brand-mark { border-color: var(--brass-soft); }
+nav.scrolled .brand-mark::after { color: var(--brass-soft); }
+
+.nav-links a { color: rgba(245,240,230,.72); }
+.brand-name { color: var(--ivory); }
+
+/* HERO: keep the high-impact dark moment */
+.hero {
+  color: var(--ivory);
+  background:
+    radial-gradient(circle at 84% 15%, rgba(168,135,77,.16), transparent 26rem),
+    radial-gradient(circle at 13% 80%, rgba(61,117,91,.17), transparent 34rem),
+    linear-gradient(122deg, #07130d 0%, #0c2016 48%, #163728 100%);
+  border-bottom: 1px solid rgba(168,135,77,.24);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(245,240,230,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,240,230,.028) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: linear-gradient(to right, rgba(0,0,0,.65), rgba(0,0,0,.12));
+}
+
+.hero::after {
+  content: "SYS / 01";
+  position: absolute;
+  right: 2.6vw;
+  bottom: 2.4vw;
+  font: 500 .63rem var(--mono);
+  letter-spacing: .18em;
+  color: rgba(245,240,230,.34);
+}
+
+.hero .hero-copy { color: rgba(245,240,230,.72); }
+.hero .hero-copy strong { color: #fffaf0; }
+.hero-badge {
+  background: rgba(255,255,255,.035);
+  border-color: rgba(168,135,77,.38);
+  color: rgba(245,240,230,.78);
+  backdrop-filter: blur(10px);
+}
+.btn-secondary { color: var(--ivory); }
+.btn-secondary:hover { background: rgba(255,255,255,.06); }
+
+/* Hero technical cross-section: lighter glass, sharper systems feel */
+.cross-section {
+  border-color: rgba(168,135,77,.30);
+  background:
+    linear-gradient(rgba(255,255,255,.026), rgba(255,255,255,.01)),
+    rgba(5,15,10,.52);
+  box-shadow:
+    inset 0 0 0 10px rgba(168,135,77,.018),
+    0 30px 80px rgba(0,0,0,.14);
+  backdrop-filter: blur(8px);
+}
+.cross-section::before,
+.cross-section::after { background: rgba(168,135,77,.28); }
+.cross-section .axis-label { color: rgba(245,240,230,.42); }
+.cross-section .node {
+  background: rgba(7,20,13,.72);
+  border-color: rgba(245,240,230,.10);
+}
+.cross-section .node p { color: rgba(245,240,230,.64); }
+.cross-section .node strong,
+.cross-section .core-ring span { color: var(--ivory); }
+.cross-section .core-ring {
+  box-shadow:
+    0 0 0 18px rgba(168,135,77,.035),
+    0 0 85px rgba(168,135,77,.09);
+}
+
+/* PROOF: deliberately light to immediately relieve the dark hero */
+.proof {
+  padding-top: 58px;
+  padding-bottom: 110px;
+  background: var(--paper);
+}
+.proof-grid {
+  border-color: var(--line-gold);
+  box-shadow: 0 18px 55px rgba(24,39,31,.035);
+}
+.proof-item { border-color: var(--line-gold); }
+.proof-value { color: var(--forest-deep); }
+.proof-label { color: #677168; }
+
+/* Main editorial sections */
+section.block {
+  background: var(--ivory);
+  color: var(--text);
+}
+section.block:nth-of-type(even) {
+  background: var(--paper);
+}
+
+.architecture {
+  background:
+    linear-gradient(180deg, rgba(168,135,77,.035), rgba(23,59,45,.018)),
+    var(--paper) !important;
+  border-color: var(--line);
+}
+.architecture-grid {
+  background: rgba(255,255,255,.34);
+  border-color: var(--line-gold);
+  box-shadow: 0 20px 70px rgba(21,36,28,.035);
+}
+.arch-card { border-color: var(--line-gold); }
+.arch-card::before { color: rgba(168,135,77,.08); }
+.arch-card h3 { color: var(--forest-deep); }
+.arch-card p { color: var(--text-soft); }
+.arch-card .mini { color: var(--brass-soft); }
+
+/* Add precision-corner geometry to architecture cards */
+.arch-card::after,
+.project-card::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 11px;
+  right: 11px;
+  border-top: 1px solid rgba(168,135,77,.42);
+  border-right: 1px solid rgba(168,135,77,.42);
+}
+
+.timeline { border-color: var(--line-gold); }
+.timeline-row { border-color: var(--line); }
+.timeline-row h3 { color: var(--forest-deep); }
+.timeline-row p { color: var(--text-soft); }
+.timeline-marker {
+  background: rgba(255,255,255,.42);
+  border-color: var(--line-gold);
+  color: var(--brass-soft);
+}
+.phase { color: var(--brass-soft); }
+
+/* Portfolio title is another dark anchor, but everything around it stays light */
+#portfolio.portfolio-hero {
+  color: var(--ivory);
+  background:
+    radial-gradient(circle at 82% 22%, rgba(168,135,77,.14), transparent 24rem),
+    linear-gradient(120deg, #0a1811 0%, #10291d 55%, #173c2c 100%);
+  border-color: rgba(168,135,77,.24);
+}
+#portfolio.portfolio-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(245,240,230,.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,240,230,.026) 1px, transparent 1px);
+  background-size: 78px 78px;
+  pointer-events: none;
+}
+#portfolio .portfolio-intro { color: rgba(245,240,230,.68); }
+#portfolio .portfolio-nav a {
+  color: rgba(245,240,230,.82);
+  border-color: rgba(168,135,77,.34);
+  background: rgba(255,255,255,.025);
+}
+#portfolio .portfolio-nav a:hover {
+  background: rgba(168,135,77,.10);
+  color: #fff8e9;
+}
+
+/* Portfolio content is now predominantly warm and light */
+.portfolio-section {
+  color: var(--text);
+  border-color: var(--line);
+  background: var(--paper);
+}
+#integration { background: #f4efe5; }
+#ai { background: #fbf8f1; }
+#products { background: #f1ebdf; }
+
+.portfolio-section .section-title { color: var(--forest-deep); }
+.portfolio-section .section-copy { color: var(--text-soft); }
+
+.project-card {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.78), rgba(255,255,255,.45));
+  border-color: rgba(23,59,45,.14);
+  box-shadow: 0 18px 52px rgba(26,39,31,.035);
+}
+.project-card:hover {
+  border-color: rgba(168,135,77,.42);
+  background: rgba(255,255,255,.88);
+  box-shadow: 0 24px 70px rgba(24,41,31,.075);
+}
+.project-type { color: var(--brass-soft); }
+.project-card h3 { color: var(--forest-deep); }
+.project-card p { color: var(--text-soft); }
+.metric {
+  color: #496557;
+  background: rgba(23,59,45,.035);
+  border-color: rgba(23,59,45,.12);
+}
+.stack { color: #667169; }
+.stack strong { color: var(--brass-soft); }
+.text-link {
+  color: var(--forest-deep);
+  border-color: rgba(168,135,77,.65);
+}
+.text-link:hover { color: var(--brass-soft); }
+
+/* Futuristic index line at the top of every portfolio section */
+.portfolio-section .shell {
+  position: relative;
+}
+.portfolio-section .shell::before {
+  content: "ARCHIVE / SYSTEM EVIDENCE";
+  position: absolute;
+  top: -58px;
+  right: 0;
+  font: 500 .58rem var(--mono);
+  letter-spacing: .16em;
+  color: rgba(23,59,45,.34);
+}
+
+/* Contact: final dark, cinematic anchor */
+.contact {
+  color: var(--ivory);
+  background:
+    radial-gradient(circle at 78% 25%, rgba(168,135,77,.12), transparent 28rem),
+    linear-gradient(125deg, #07130d, #0d2519 60%, #173829);
+  border-top: 1px solid rgba(168,135,77,.22);
+}
+.contact .eyebrow { color: #c8aa70; }
+.contact-panel { border-color: rgba(168,135,77,.28); }
+.contact-panel p { color: rgba(245,240,230,.68); }
+.contact-link { color: var(--ivory); }
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(245,240,230,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,240,230,.022) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+footer {
+  background: #06100b;
+  color: rgba(245,240,230,.58);
+  border-color: rgba(168,135,77,.20);
+}
+
+/* Small old-money/future refinements */
+.section-title,
+.project-card h3,
+.timeline-row h3,
+.arch-card h3 {
+  text-wrap: balance;
+}
+
+.project-card,
+.arch-card,
+.proof-grid,
+.cross-section {
+  border-radius: 2px; /* architectural, less "app-card" */
+}
+
+.btn {
+  border-radius: 999px;
+}
+
+@media (max-width: 760px) {
+  body::before { background-size: 48px 48px; }
+  .hero::after { display: none; }
+  .portfolio-section .shell::before { display: none; }
+  .proof { padding-top: 42px; }
+}
+</style>
+
+
+<style id="portfolio-navigation-fix">
+/* Portfolio navigation visibility fix */
+.mobile-portfolio-link {
+  display: none;
+  text-decoration: none;
+  font: 600 .67rem var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  border: 1px solid rgba(168,135,77,.48);
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+  backdrop-filter: blur(8px);
+}
+
+nav.scrolled .mobile-portfolio-link {
+  color: var(--forest-deep);
+  border-color: rgba(168,135,77,.52);
+  background: rgba(255,255,255,.58);
+}
+
+/* Make the return control unmistakably visible on light portfolio sections */
+.portfolio-section .home-return {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 36px;
+  color: var(--forest-deep);
+  border: 1px solid rgba(168,135,77,.68);
+  background: rgba(255,255,255,.64);
+  box-shadow: 0 10px 28px rgba(24,41,31,.055);
+  font-weight: 700;
+}
+
+.portfolio-section .home-return:hover {
+  color: #fffaf0;
+  background: var(--forest);
+  border-color: var(--forest);
+  box-shadow: 0 14px 34px rgba(23,59,45,.14);
+}
+
+/* Keep the portfolio index easy to navigate on smaller screens */
+@media (max-width: 768px) {
+  .mobile-portfolio-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .portfolio-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  #portfolio .portfolio-nav a {
+    text-align: center;
+    padding: 11px 10px;
+  }
+
+  .portfolio-section .home-return {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 430px) {
+  .mobile-portfolio-link {
+    padding: 8px 10px;
+    font-size: .61rem;
+  }
+
+  .brand-name {
+    font-size: .78rem;
+  }
+
+  .portfolio-nav {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+</head>
 <body>
 <nav id="nav">
 <div class="shell nav-inner">
@@ -493,7 +930,7 @@
 <span aria-hidden="true" class="brand-mark"></span>
 <span class="brand-name">Tobi Ogunbowale</span>
 </a>
-<ul class="nav-links"><li><a href="#profile">Profile</a></li><li><a href="#architecture">Architecture</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#contact">Contact</a></li></ul>
+<ul class="nav-links"><li><a href="#profile">Profile</a></li><li><a href="#architecture">Architecture</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#contact">Contact</a></li></ul><a class="mobile-portfolio-link" href="#portfolio">Portfolio</a>
 </div>
 </nav>
 <main id="top">
