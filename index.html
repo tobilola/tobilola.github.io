@@ -1,1584 +1,704 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tobi Ogunbowale — Science × AI Innovation</title>
-
-  <!-- Distinctive Typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-
-  <!-- SEO -->
-  <meta name="description" content="Microbiologist turned AI innovator. Building intelligent lab informatics solutions."/>
-  <meta name="author" content="Tobi Ogunbowale"/>
-
-  <!-- If JS is disabled, don't hide all reveal content -->
-  <noscript>
-    <style>
-      .reveal { opacity: 1 !important; transform: none !important; }
-      .nav-links { display: flex !important; }
-      .hamburger { display: none !important; }
-      .mobile-drawer { display: none !important; }
-    </style>
-  </noscript>
-
-  <style>
-    /* ====  DESIGN SYSTEM ==== */
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tobi Ogunbowale | Applied AI, Systems Architecture &amp; Product Delivery</title>
+<meta content="Tobi Ogunbowale works across applied AI, systems architecture, digital transformation, data products and technical product delivery, grounded in complex scientific and regulated environments." name="description"/>
+<meta content="Tobi Ogunbowale" name="author"/>
+<meta content="#0d1713" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
-      --midnight: #0a1828;
-      --deep-ocean: #1e3a5f;
-      --electric-teal: #00d9ff;
-      --neon-cyan: #00ffcc;
-      --lab-green: #39ff14;
-      --warm-white: #f8f9fa;
-      --soft-gray: #e1e8ed;
-      --accent-purple: #a855f7;
-      --accent-coral: #ff6b9d;
-
-      --font-display: 'Playfair Display', serif;
-      --font-mono: 'Space Mono', monospace;
-      --font-body: 'DM Sans', sans-serif;
+      --ink: #0d1713;
+      --ink-2: #111d18;
+      --forest: #163229;
+      --forest-2: #21483a;
+      --ivory: #f2ecdf;
+      --ivory-2: #d8d0c0;
+      --paper: #e8e0d1;
+      --brass: #b79a61;
+      --brass-soft: #8f774d;
+      --sage: #89a397;
+      --oxblood: #5b2a30;
+      --line: rgba(183, 154, 97, .28);
+      --line-soft: rgba(242, 236, 223, .12);
+      --glass: rgba(242, 236, 223, .045);
+      --display: "Cormorant Garamond", Georgia, serif;
+      --body: "Inter", Arial, sans-serif;
+      --mono: "IBM Plex Mono", monospace;
+      --max: 1240px;
+      --radius: 18px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: var(--font-body);
-      background: var(--midnight);
-      color: var(--warm-white);
-      line-height: 1.7;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Animated background grid */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      font-family: var(--body);
       background:
-        linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-      z-index: 0;
-      animation: gridScroll 20s linear infinite;
+        radial-gradient(circle at 15% 5%, rgba(33, 72, 58, .34), transparent 28rem),
+        radial-gradient(circle at 90% 40%, rgba(91, 42, 48, .10), transparent 34rem),
+        var(--ink);
+      color: var(--ivory);
+      line-height: 1.65;
+      overflow-x: hidden;
     }
 
-    @keyframes gridScroll {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(50px); }
-    }
-
-    /* Floating particles effect */
-    .particles {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .particle {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: var(--electric-teal);
-      border-radius: 50%;
-      opacity: 0;
-      animation: float 15s infinite;
-    }
-
-    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .particle:nth-child(2) { left: 25%; animation-delay: 3s; }
-    .particle:nth-child(3) { left: 40%; animation-delay: 6s; }
-    .particle:nth-child(4) { left: 60%; animation-delay: 2s; }
-    .particle:nth-child(5) { left: 75%; animation-delay: 8s; }
-    .particle:nth-child(6) { left: 85%; animation-delay: 5s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(100vh) scale(0); opacity: 0; }
-      10%, 90% { opacity: 0.6; }
-      50% { transform: translateY(-100vh) scale(1); opacity: 0.8; }
-    }
-
-    /* ===== NAV ===== */
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      padding: 24px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      background: linear-gradient(180deg, rgba(10, 24, 40, 0.95) 0%, rgba(10, 24, 40, 0) 100%);
-      backdrop-filter: blur(20px);
-      transition: all 0.3s;
-    }
-
-    nav.scrolled {
-      background: rgba(10, 24, 40, 0.98);
-      border-bottom: 1px solid rgba(0, 217, 255, 0.2);
-      padding: 16px 48px;
-    }
-
-    .logo {
-      font-family: var(--font-mono);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--electric-teal);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      position: relative;
-      padding-left: 32px;
-      z-index: 2; /* stays above drawer */
-    }
-
-    .logo::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 50%;
-      transform: translateY(-50%);
-      width: 24px; height: 2px;
-      background: var(--neon-cyan);
-      box-shadow: 0 0 10px var(--neon-cyan);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 48px;
-      list-style: none;
-      z-index: 2;
-    }
-
-    .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--soft-gray);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      position: relative;
-      padding: 8px 0;
-      transition: color 0.3s;
-    }
-
-    .nav-links a::before { content: '[ '; color: var(--electric-teal); opacity: 0; transition: opacity 0.3s; }
-    .nav-links a::after  { content: ' ]'; color: var(--electric-teal); opacity: 0; transition: opacity 0.3s; }
-    .nav-links a:hover { color: var(--neon-cyan); }
-    .nav-links a:hover::before,
-    .nav-links a:hover::after { opacity: 1; }
-
-    /* Hamburger button (mobile) */
-    .hamburger {
-      display: none;
-      background: transparent;
-      border: 1px solid rgba(0, 217, 255, 0.35);
-      color: var(--electric-teal);
-      padding: 10px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 2;
-      backdrop-filter: blur(10px);
-    }
-
-    .hamburger:focus {
-      outline: 2px solid rgba(0, 255, 204, 0.6);
-      outline-offset: 2px;
-    }
-
-    .hamburger-lines {
-      width: 22px;
-      height: 14px;
-      display: grid;
-      gap: 4px;
-    }
-
-    .hamburger-lines span {
-      display: block;
-      height: 2px;
-      width: 100%;
-      background: var(--electric-teal);
-      border-radius: 2px;
-      transition: transform 0.25s, opacity 0.25s;
-    }
-
-    /* Mobile drawer */
-    .mobile-overlay {
+    body::before {
+      content: "";
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.55);
-      opacity: 0;
       pointer-events: none;
-      transition: opacity 0.25s;
-      z-index: 900;
+      opacity: .22;
+      background-image:
+        linear-gradient(rgba(183,154,97,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(183,154,97,.045) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+      z-index: -1;
     }
 
-    .mobile-drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: min(360px, 86vw);
-      background: rgba(10, 24, 40, 0.98);
-      border-left: 1px solid rgba(0, 217, 255, 0.25);
-      transform: translateX(110%);
-      transition: transform 0.25s;
-      z-index: 950;
-      padding: 92px 24px 24px; /* below nav */
-      backdrop-filter: blur(20px);
-    }
+    ::selection { background: var(--brass); color: var(--ink); }
+    a { color: inherit; }
 
-    .mobile-drawer ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .mobile-drawer a {
-      font-family: var(--font-mono);
-      font-size: 0.95rem;
-      color: var(--soft-gray);
-      text-decoration: none;
+    .shell { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow {
+      font: 500 .72rem/1.4 var(--mono);
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 12px 10px;
-      border-radius: 10px;
-      border: 1px solid rgba(0, 217, 255, 0.12);
-      background: rgba(30, 58, 95, 0.22);
+      letter-spacing: .18em;
+      color: var(--brass);
     }
 
-    .mobile-drawer a:hover {
-      color: var(--neon-cyan);
-      border-color: rgba(0, 255, 204, 0.35);
+    .section-kicker { margin-bottom: 14px; }
+    .section-title {
+      font: 600 clamp(2.7rem, 6vw, 5rem)/.96 var(--display);
+      letter-spacing: -.03em;
+      max-width: 900px;
+    }
+    .section-copy {
+      color: var(--ivory-2);
+      max-width: 720px;
+      margin-top: 22px;
+      font-size: 1rem;
     }
 
-    /* Open state */
-    body.nav-open .mobile-overlay {
-      opacity: 1;
-      pointer-events: auto;
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      border-bottom: 1px solid transparent;
+      transition: .25s ease;
     }
+    nav.scrolled {
+      background: rgba(13, 23, 19, .88);
+      backdrop-filter: blur(18px);
+      border-color: var(--line-soft);
+    }
+    .nav-inner {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+    }
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--brass);
+      display: grid;
+      place-items: center;
+      transform: rotate(45deg);
+      position: relative;
+    }
+    .brand-mark::after {
+      content: "T";
+      transform: rotate(-45deg);
+      font: 600 .9rem var(--display);
+      color: var(--brass);
+    }
+    .brand-name {
+      font: 600 1rem var(--display);
+      letter-spacing: .05em;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ivory-2);
+      font-size: .8rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--brass); }
 
-    body.nav-open .mobile-drawer {
-      transform: translateX(0);
-    }
-
-    body.nav-open .hamburger-lines span:nth-child(1) {
-      transform: translateY(6px) rotate(45deg);
-    }
-    body.nav-open .hamburger-lines span:nth-child(2) {
-      opacity: 0;
-    }
-    body.nav-open .hamburger-lines span:nth-child(3) {
-      transform: translateY(-6px) rotate(-45deg);
-    }
-
-    body.nav-open {
-      overflow: hidden; /* prevent background scroll */
-    }
-
-    /* ===== HERO ===== */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
+      padding: 150px 0 90px;
       position: relative;
-      padding: 120px 48px 80px;
-      z-index: 2;
     }
-
-    .hero-content { max-width: 1200px; width: 100%; }
-
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 80px;
+      align-items: center;
+    }
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      padding: 12px 24px;
-      background: rgba(0, 217, 255, 0.1);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 100px;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--electric-teal);
-      margin-bottom: 32px;
-      animation: slideInUp 0.8s ease-out 0.2s backwards;
+      gap: 10px;
+      border: 1px solid var(--line);
+      padding: 9px 13px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+      color: var(--ivory-2);
+      font: 500 .7rem var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: rgba(183,154,97,.04);
     }
-
     .hero-badge::before {
-      content: '';
-      width: 8px; height: 8px;
-      background: var(--lab-green);
+      content: "";
+      width: 7px;
+      height: 7px;
+      border: 1px solid var(--brass);
       border-radius: 50%;
-      box-shadow: 0 0 12px var(--lab-green);
-      animation: pulse 2s infinite;
+      box-shadow: 0 0 0 4px rgba(183,154,97,.08);
     }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
-    }
-
     .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 7rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-      animation: slideInUp 0.8s ease-out 0.4s backwards;
+      font: 600 clamp(4.2rem, 8vw, 7.7rem)/.83 var(--display);
+      letter-spacing: -.055em;
+      max-width: 880px;
     }
-
-    .hero h1 .gradient-text {
-      background: linear-gradient(135deg, var(--electric-teal) 0%, var(--neon-cyan) 50%, var(--accent-purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradientShift 8s ease infinite;
-      background-size: 200% 200%;
+    .hero h1 em { color: var(--brass); font-weight: 500; }
+    .hero-copy {
+      color: var(--ivory-2);
+      font-size: 1.08rem;
+      max-width: 760px;
+      margin-top: 32px;
     }
-
-    @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    .hero-subtitle {
-      font-family: var(--font-mono);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      color: var(--soft-gray);
-      margin-bottom: 40px;
-      max-width: 800px;
-      line-height: 1.8;
-      animation: slideInUp 0.8s ease-out 0.6s backwards;
-    }
-
-    .hero-subtitle .highlight { color: var(--neon-cyan); font-weight: 700; }
-
-    @keyframes slideInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      animation: slideInUp 0.8s ease-out 0.8s backwards;
-    }
-
+    .hero-copy strong { color: var(--ivory); font-weight: 500; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
     .btn {
-      padding: 18px 36px;
-      font-family: var(--font-mono);
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
+      min-height: 48px;
+      padding: 0 22px;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border: 1px solid var(--brass);
+      transition: .25s ease;
     }
+    .btn-primary { background: var(--brass); color: var(--ink); }
+    .btn-primary:hover { background: var(--ivory); border-color: var(--ivory); }
+    .btn-secondary { color: var(--ivory); background: transparent; }
+    .btn-secondary:hover { background: rgba(183,154,97,.08); }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--electric-teal), var(--neon-cyan));
-      color: var(--midnight);
-      box-shadow: 0 8px 32px rgba(0, 217, 255, 0.3);
-    }
-
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0, 217, 255, 0.5); }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--electric-teal);
-      border: 2px solid var(--electric-teal);
-    }
-
-    .btn-secondary:hover { background: rgba(0, 217, 255, 0.1); transform: translateY(-3px); }
-
-    .btn::after { content: '→'; margin-left: 8px; transition: transform 0.3s; }
-    .btn:hover::after { transform: translateX(4px); }
-
-    /* Stats */
-    .stats { padding: 120px 48px; position: relative; z-index: 2; }
-
-    .stats-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 32px;
-    }
-
-    .stat-card {
-      padding: 40px 32px;
-      background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
-      border: 1px solid rgba(0, 217, 255, 0.2);
-      border-radius: 12px;
+    /* Futuristic cross-section */
+    .cross-section {
       position: relative;
+      min-height: 590px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(242,236,223,.035), rgba(242,236,223,.012)),
+        rgba(6, 13, 10, .5);
       overflow: hidden;
-      transition: all 0.4s;
+      box-shadow: inset 0 0 0 10px rgba(183,154,97,.018);
     }
-
-    .stat-card::before {
-      content: '';
+    .cross-section::before,
+    .cross-section::after {
+      content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--electric-teal), transparent);
-      animation: shimmer 3s infinite;
+      background: var(--line);
+      opacity: .8;
     }
-
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    .stat-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--electric-teal);
-      box-shadow: 0 16px 48px rgba(0, 217, 255, 0.2);
-    }
-
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--electric-teal), var(--neon-cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .stat-label {
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      color: var(--soft-gray);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* Section header */
-    .journey { padding: 120px 48px; position: relative; z-index: 2; }
-    .section-header { text-align: center; max-width: 800px; margin: 0 auto 80px; }
-    .section-tag {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--electric-teal);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 16px;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 24px;
-    }
-    .section-description { font-size: 1.1rem; color: var(--soft-gray); line-height: 1.8; }
-
-    /* Timeline */
-    .timeline { max-width: 1000px; margin: 0 auto; position: relative; }
-
-    .timeline::before {
-      content: '';
+    .cross-section::before { width: 1px; top: 0; bottom: 0; left: 50%; }
+    .cross-section::after { height: 1px; left: 0; right: 0; top: 50%; }
+    .axis-label {
       position: absolute;
-      left: 50%;
-      top: 0; bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg,
-        var(--lab-green) 0%,
-        var(--electric-teal) 25%,
-        var(--accent-purple) 50%,
-        var(--accent-coral) 75%,
-        var(--neon-cyan) 100%
-      );
-      transform: translateX(-50%);
+      font: 500 .62rem var(--mono);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(216,208,192,.55);
     }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 48px;
-      margin-bottom: 80px;
-      align-items: center;
-      position: relative;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content:first-child { order: 3; }
-
-    .timeline-content {
-      padding: 32px;
-      background: rgba(30, 58, 95, 0.3);
-      border: 1px solid rgba(0, 217, 255, 0.2);
-      border-radius: 16px;
-      backdrop-filter: blur(10px);
-      transition: all 0.4s;
-    }
-
-    .timeline-content:hover {
-      transform: scale(1.05);
-      border-color: var(--electric-teal);
-      box-shadow: 0 16px 48px rgba(0, 217, 255, 0.2);
-    }
-
-    .timeline-icon {
-      width: 80px;
-      height: 80px;
+    .axis-x { right: 18px; top: calc(50% + 12px); }
+    .axis-y { left: calc(50% + 12px); top: 18px; writing-mode: vertical-rl; }
+    .core-ring {
+      width: 196px;
+      aspect-ratio: 1;
+      border: 1px solid var(--brass);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 10;
-      border: 3px solid var(--midnight);
-      box-shadow: 0 0 0 3px;
-    }
-
-    .timeline-icon svg { width: 36px; height: 36px; stroke-width: 2; }
-
-    .timeline-item:nth-child(1) .timeline-icon {
-      background: linear-gradient(135deg, #10b981, #059669);
-      box-shadow: 0 0 0 3px #10b981, 0 8px 32px rgba(16, 185, 129, 0.4);
-      color: #fff;
-    }
-    .timeline-item:nth-child(2) .timeline-icon {
-      background: linear-gradient(135deg, var(--electric-teal), var(--neon-cyan));
-      box-shadow: 0 0 0 3px var(--electric-teal), 0 8px 32px rgba(0, 217, 255, 0.4);
-      color: var(--midnight);
-    }
-    .timeline-item:nth-child(3) .timeline-icon {
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      box-shadow: 0 0 0 3px #f59e0b, 0 8px 32px rgba(245, 158, 11, 0.4);
-      color: #fff;
-    }
-    .timeline-item:nth-child(4) .timeline-icon {
-      background: linear-gradient(135deg, var(--accent-purple), #6d28d9);
-      box-shadow: 0 0 0 3px var(--accent-purple), 0 8px 32px rgba(168, 85, 247, 0.4);
-      color: #fff;
-    }
-    .timeline-item:nth-child(5) .timeline-icon {
-      background: linear-gradient(135deg, var(--accent-coral), #ec4899);
-      box-shadow: 0 0 0 3px var(--accent-coral), 0 8px 32px rgba(255, 107, 157, 0.4);
-      color: #fff;
-    }
-
-    .timeline-phase {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--electric-teal);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 12px;
-    }
-
-    .timeline-title {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .timeline-description { color: var(--soft-gray); line-height: 1.7; }
-    .timeline-placeholder { opacity: 0; }
-
-    /* Projects */
-    .projects { padding: 120px 48px; position: relative; z-index: 2; }
-
-    .projects-grid {
-      max-width: 1400px;
-      margin: 0 auto;
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      gap: 32px;
-
-      /* FIX: equal heights */
-      align-items: stretch;
-    }
-
-    .project-card {
-      padding: 40px;
-      background: rgba(30, 58, 95, 0.3);
-      border: 1px solid rgba(0, 217, 255, 0.2);
-      border-radius: 16px;
-      backdrop-filter: blur(10px);
-      transition: all 0.4s;
-      position: relative;
-      overflow: hidden;
-
-      /* FIX: equal heights + bottom-aligned links */
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg,
-        var(--lab-green) 0%,
-        var(--electric-teal) 50%,
-        var(--accent-purple) 100%
-      );
-      transform: translateX(-100%);
-      transition: transform 0.6s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--electric-teal);
-      box-shadow: 0 24px 64px rgba(0, 217, 255, 0.2);
-    }
-
-    .project-card:hover::before { transform: translateX(0); }
-
-    .project-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      background: rgba(0, 217, 255, 0.1);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 100px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--electric-teal);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-      width: fit-content;
-    }
-
-    .project-tag svg { width: 14px; height: 14px; }
-
-    .project-title {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 900;
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-
-    .project-description { color: var(--soft-gray); line-height: 1.7; margin-bottom: 24px; }
-
-    .project-metrics { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
-
-    .metric-badge {
-      padding: 8px 16px;
-      background: rgba(57, 255, 20, 0.1);
-      border: 1px solid rgba(57, 255, 20, 0.3);
-      border-radius: 4px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--lab-green);
-    }
-
-    .project-tech {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--soft-gray);
-      margin-bottom: 24px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(0, 217, 255, 0.1);
-    }
-
-    .project-tech strong { color: var(--electric-teal); }
-
-    .project-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      align-items: center;
-
-      /* FIX: push links to bottom */
-      margin-top: auto;
-    }
-
-    .project-link {
-      padding: 12px 24px;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: all 0.3s;
-      border: 1px solid var(--electric-teal);
-      color: var(--electric-teal);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .project-link svg { width: 16px; height: 16px; }
-    .project-link:hover { background: var(--electric-teal); color: var(--midnight); transform: translateY(-2px); }
-
-    /* Tech Stack */
-    .tech-stack { padding: 120px 48px; position: relative; z-index: 2; background: rgba(30, 58, 95, 0.2); }
-
-    .tech-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-
-    .tech-category {
-      padding: 32px;
-      background: rgba(10, 24, 40, 0.6);
-      border: 1px solid rgba(0, 217, 255, 0.2);
-      border-radius: 12px;
-      transition: all 0.4s;
-    }
-
-    .tech-category:hover {
-      border-color: var(--electric-teal);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 217, 255, 0.2);
-    }
-
-    .tech-category-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-
-    .tech-icon {
-      width: 40px; height: 40px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, var(--electric-teal), var(--neon-cyan));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--midnight);
-    }
-
-    .tech-icon svg { width: 24px; height: 24px; }
-
-    .tech-category h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; }
-
-    .tech-list { list-style: none; }
-
-    .tech-list li {
-      padding: 10px 0;
-      color: var(--soft-gray);
-      font-size: 0.95rem;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .tech-list li::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 50%;
-      transform: translateY(-50%);
-      width: 6px; height: 6px;
-      background: var(--electric-teal);
-      border-radius: 50%;
-    }
-
-    /* Contact */
-    .contact { padding: 120px 48px; position: relative; z-index: 2; text-align: center; }
-    .contact-content { max-width: 800px; margin: 0 auto; }
-
-    .contact-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      margin-bottom: 24px;
-      line-height: 1.2;
-    }
-
-    .contact-subtitle { font-size: 1.2rem; color: var(--soft-gray); margin-bottom: 48px; line-height: 1.8; }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-
-    .contact-link {
-      font-family: var(--font-mono);
-      font-size: 1rem;
-      color: var(--electric-teal);
-      text-decoration: none;
-      position: relative;
-      padding: 8px 0;
-      transition: color 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .contact-link svg { width: 20px; height: 20px; }
-
-    .contact-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: var(--neon-cyan);
-      transition: width 0.3s;
-    }
-
-    .contact-link:hover { color: var(--neon-cyan); }
-    .contact-link:hover::after { width: 100%; }
-
-    footer {
-      padding: 48px;
+      place-items: center;
       text-align: center;
-      border-top: 1px solid rgba(0, 217, 255, 0.2);
+      box-shadow: 0 0 0 18px rgba(183,154,97,.035), 0 0 70px rgba(183,154,97,.06);
+    }
+    .core-ring::before,
+    .core-ring::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(183,154,97,.24);
+      border-radius: 50%;
+    }
+    .core-ring::before { inset: 18px; }
+    .core-ring::after { inset: 38px; border-style: dashed; }
+    .core-ring span {
       position: relative;
       z-index: 2;
+      font: 600 1.45rem/1.1 var(--display);
+      color: var(--ivory);
+      max-width: 110px;
+    }
+    .node {
+      position: absolute;
+      width: 42%;
+      min-height: 112px;
+      padding: 18px;
+      background: rgba(13, 23, 19, .78);
+      border: 1px solid var(--line-soft);
+    }
+    .node small {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--brass);
+      font: 500 .62rem var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .node strong { font: 600 1.25rem var(--display); }
+    .node p { margin-top: 7px; color: var(--ivory-2); font-size: .78rem; line-height: 1.5; }
+    .node::after { content: ""; position: absolute; background: var(--brass); opacity: .55; }
+    .node-a { top: 7%; left: 5%; }
+    .node-b { top: 7%; right: 5%; }
+    .node-c { bottom: 7%; left: 5%; }
+    .node-d { bottom: 7%; right: 5%; }
+    .node-a::after, .node-c::after { width: 46px; height: 1px; right: -46px; top: 50%; }
+    .node-b::after, .node-d::after { width: 46px; height: 1px; left: -46px; top: 50%; }
+    .scanline {
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(137,163,151,.8), transparent);
+      animation: scan 7s linear infinite;
+      opacity: .45;
+    }
+    @keyframes scan { from { top: 6%; } to { top: 94%; } }
+
+    .proof { padding: 26px 0 120px; }
+    .proof-grid {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .proof-item { padding: 34px 24px; border-right: 1px solid var(--line); }
+    .proof-item:last-child { border-right: 0; }
+    .proof-value { font: 600 2.5rem var(--display); color: var(--ivory); }
+    .proof-label { margin-top: 5px; color: var(--ivory-2); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+
+    section.block { padding: 120px 0; }
+    .section-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: end; margin-bottom: 64px; }
+    .section-head .section-copy { margin-top: 0; }
+
+    .architecture {
+      background: linear-gradient(180deg, rgba(242,236,223,.025), rgba(242,236,223,.008));
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .architecture-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); }
+    .arch-card {
+      min-height: 340px;
+      padding: 28px;
+      border-right: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .arch-card:last-child { border-right: 0; }
+    .arch-card::before {
+      content: attr(data-index);
+      position: absolute;
+      right: 14px;
+      top: -18px;
+      font: 600 6rem var(--display);
+      color: rgba(183,154,97,.055);
+    }
+    .arch-card h3 { margin-top: 50px; font: 600 2rem/1.05 var(--display); }
+    .arch-card p { margin-top: 18px; color: var(--ivory-2); font-size: .92rem; }
+    .arch-card .mini { position: absolute; left: 28px; bottom: 28px; right: 28px; color: var(--brass); font: 500 .66rem var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+
+    .timeline { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 170px 90px 1fr;
+      gap: 24px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line-soft);
+      align-items: start;
+    }
+    .phase { font: 500 .65rem var(--mono); color: var(--brass); text-transform: uppercase; letter-spacing: .11em; }
+    .timeline-marker { width: 44px; height: 44px; border: 1px solid var(--line); display: grid; place-items: center; font: 500 .7rem var(--mono); color: var(--brass); }
+    .timeline-row h3 { font: 600 1.9rem var(--display); }
+    .timeline-row p { margin-top: 8px; color: var(--ivory-2); max-width: 800px; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .project-card {
+      border: 1px solid var(--line-soft);
+      background: var(--glass);
+      padding: 30px;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: border-color .25s, transform .25s, background .25s;
+    }
+    .project-card:hover { border-color: var(--line); transform: translateY(-4px); background: rgba(242,236,223,.06); }
+    .project-type { font: 500 .66rem var(--mono); color: var(--brass); text-transform: uppercase; letter-spacing: .12em; }
+    .project-card h3 { margin-top: 20px; font: 600 2rem/1 var(--display); }
+    .project-card p { color: var(--ivory-2); margin-top: 16px; font-size: .9rem; }
+    .metrics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .metric { border: 1px solid var(--line-soft); padding: 6px 9px; font: 500 .64rem var(--mono); color: var(--sage); }
+    .stack { margin-top: auto !important; padding-top: 24px; font: 400 .7rem var(--mono); color: var(--ivory-2); }
+    .stack strong { color: var(--brass); font-weight: 500; }
+    .links { display: flex; gap: 10px; margin-top: 16px; }
+    .text-link { text-decoration: none; border-bottom: 1px solid var(--brass); padding-bottom: 3px; font-size: .76rem; color: var(--ivory); }
+    .text-link:hover { color: var(--brass); }
+
+    .capabilities { background: #efe7d8; color: #16211c; }
+    .capabilities .eyebrow { color: #765f3d; }
+    .capabilities .section-copy { color: #5d625e; }
+    .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(22,33,28,.18); border-left: 1px solid rgba(22,33,28,.18); }
+    .cap-card { padding: 28px; min-height: 280px; border-right: 1px solid rgba(22,33,28,.18); border-bottom: 1px solid rgba(22,33,28,.18); }
+    .cap-card h3 { font: 600 1.65rem var(--display); }
+    .cap-card ul { list-style: none; margin-top: 18px; }
+    .cap-card li { padding: 7px 0 7px 17px; position: relative; color: #4e5752; font-size: .88rem; }
+    .cap-card li::before { content: "•"; position: absolute; left: 0; color: #765f3d; }
+
+    .contact {
+      padding: 130px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact::after {
+      content: "TO";
+      position: absolute;
+      right: -2vw;
+      bottom: -11vw;
+      font: 600 28vw/.8 var(--display);
+      color: rgba(183,154,97,.035);
+      pointer-events: none;
+    }
+    .contact-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 80px; align-items: end; }
+    .contact h2 { font: 600 clamp(3.8rem, 8vw, 7rem)/.88 var(--display); letter-spacing: -.04em; }
+    .contact h2 em { color: var(--brass); font-weight: 500; }
+    .contact-panel { border-top: 1px solid var(--line); padding-top: 22px; position: relative; z-index: 2; }
+    .contact-panel p { color: var(--ivory-2); }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 14px 24px; margin-top: 26px; }
+    .contact-link { text-decoration: none; color: var(--ivory); font-size: .82rem; border-bottom: 1px solid rgba(183,154,97,.5); padding-bottom: 4px; }
+    .contact-link:hover { color: var(--brass); }
+    .resume-note { margin-top: 24px; font: 400 .69rem var(--mono); color: var(--sage); }
+
+    footer { border-top: 1px solid var(--line-soft); padding: 28px 0 36px; color: var(--ivory-2); font-size: .72rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.active { opacity: 1; transform: none; }
+
+    @media (max-width: 1050px) {
+      .hero-grid, .contact-grid, .section-head { grid-template-columns: 1fr; }
+      .hero-grid { gap: 55px; }
+      .cross-section { min-height: 520px; }
+      .architecture-grid { grid-template-columns: repeat(2, 1fr); }
+      .arch-card:nth-child(2) { border-right: 0; }
+      .arch-card:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
     }
 
-    footer p { font-family: var(--font-mono); font-size: 0.85rem; color: var(--soft-gray); }
-
-    /* Scroll reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav { padding: 16px 18px; }
-
-      /* Desktop links hidden, hamburger shown */
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 32px, var(--max)); }
+      .nav-inner { height: 70px; }
       .nav-links { display: none; }
-      .hamburger { display: inline-flex; align-items: center; justify-content: center; }
-
-      .hero { padding: 100px 24px 60px; }
-      .hero h1 { font-size: 2.5rem; }
-
-      .stats { padding: 80px 24px; }
-      .journey { padding: 80px 24px; }
-
-      .timeline::before { left: 20px; }
-      .timeline-item { grid-template-columns: 60px 1fr; gap: 24px; }
-      .timeline-placeholder { display: none; }
-
-      .projects { padding: 80px 24px; }
-      .projects-grid { grid-template-columns: 1fr; }
-
-      .tech-stack { padding: 80px 24px; }
-      .tech-grid { grid-template-columns: 1fr; }
-
-      .contact { padding: 80px 24px; }
-      .contact-links { flex-direction: column; gap: 20px; }
+      .hero { padding-top: 118px; }
+      .hero h1 { font-size: clamp(3.55rem, 16vw, 5.4rem); }
+      .cross-section { min-height: 680px; }
+      .node { width: 84%; left: 8% !important; right: auto !important; min-height: 95px; }
+      .node-a { top: 5%; }
+      .node-b { top: 22%; }
+      .node-c { bottom: 22%; }
+      .node-d { bottom: 5%; }
+      .node::after { display: none; }
+      .core-ring { width: 170px; }
+      .proof-grid, .architecture-grid, .projects-grid, .cap-grid { grid-template-columns: 1fr; }
+      .proof-item { border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+      .arch-card { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; }
+      .arch-card:last-child { border-bottom: 0 !important; }
+      .timeline-row { grid-template-columns: 1fr; gap: 12px; }
+      .timeline-marker { width: 38px; height: 38px; }
+      .section-head { gap: 28px; }
+      section.block { padding: 90px 0; }
+      .contact { padding: 100px 0; }
+      .footer-inner { flex-direction: column; }
     }
 
-    /* Accessibility: reduce motion */
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      body::before { animation: none; }
-      .particle { animation: none; opacity: 0.2; }
-      .hero-badge, .hero h1, .hero-subtitle, .hero-cta { animation: none; }
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .mobile-overlay, .mobile-drawer { transition: none; }
+      * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
-</head>
+<style>
+  .portfolio-hero{padding:180px 0 90px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .portfolio-hero:after{content:"PORTFOLIO";position:absolute;right:-1vw;bottom:-3.5vw;font:600 clamp(5rem,16vw,13rem)/1 var(--display);color:rgba(242,236,223,.025);letter-spacing:-.06em;pointer-events:none}
+  .portfolio-hero h1{font:600 clamp(4rem,8vw,7.5rem)/.9 var(--display);letter-spacing:-.045em;max-width:900px}
+  .portfolio-hero h1 em{color:var(--brass);font-weight:500}
+  .portfolio-intro{max-width:730px;margin-top:30px;color:var(--ivory-2);font-size:1rem}
+  .portfolio-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+  .portfolio-nav a{font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ivory);text-decoration:none;border:1px solid var(--line);padding:10px 14px}
+  .portfolio-nav a:hover{color:var(--brass);border-color:var(--brass)}
+  .portfolio-section{padding:100px 0;border-bottom:1px solid var(--line)}
+  .portfolio-section .section-head{margin-bottom:44px}
+  .project-card{min-height:100%}
+  .home-return{display:inline-flex;margin-top:28px}
+  @media (max-width:768px){.portfolio-hero{padding:140px 0 70px}.portfolio-section{padding:74px 0}.projects-grid{grid-template-columns:1fr}}
 
+
+/* Single-page portfolio integration */
+#portfolio.portfolio-hero{padding:120px 0 78px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);min-height:auto}
+#portfolio.portfolio-hero:after{bottom:-2.6vw}
+.portfolio-section{scroll-margin-top:78px}
+#portfolio{scroll-margin-top:78px}
+</style></head>
 <body>
-  <!-- Floating Particles -->
-  <div class="particles" aria-hidden="true">
-    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-  </div>
+<nav id="nav">
+<div class="shell nav-inner">
+<a aria-label="Tobi Ogunbowale home" class="brand" href="#top">
+<span aria-hidden="true" class="brand-mark"></span>
+<span class="brand-name">Tobi Ogunbowale</span>
+</a>
+<ul class="nav-links"><li><a href="#profile">Profile</a></li><li><a href="#architecture">Architecture</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#contact">Contact</a></li></ul>
+</div>
+</nav>
+<main id="top">
+<section class="hero">
+<div class="shell hero-grid">
+<div class="reveal">
+<div class="hero-badge">Applied AI · Systems Architecture · Product Delivery</div>
+<h1>Building at the <em>cross-section</em> of operations, systems &amp; intelligent technology.</h1>
+<p class="hero-copy">I bring <strong>10+ years across scientific operations, enterprise systems, data and AI</strong>, translating complex workflows into scalable digital products, integrated platforms and production intelligence.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#portfolio">View Portfolio</a>
+<a class="btn btn-secondary" href="#profile">Explore Experience</a>
+</div>
+</div>
+<div aria-label="Visual cross-section of Tobi's operating model" class="cross-section reveal">
+<div class="scanline"></div>
+<span class="axis-label axis-x">delivery →</span>
+<span class="axis-label axis-y">intelligence →</span>
+<div class="node node-a">
+<small>01 / Domain</small>
+<strong>Life Sciences</strong>
+<p>Laboratory operations, research workflows, quality, compliance and population health.</p>
+</div>
+<div class="node node-b">
+<small>02 / Systems</small>
+<strong>Architecture</strong>
+<p>LIMS/LIS, ELN integration, APIs, data flows, digital operating models and system delivery.</p>
+</div>
+<div class="core-ring"><span>Applied Intelligence</span></div>
+<div class="node node-c">
+<small>03 / Intelligence</small>
+<strong>AI &amp; Data</strong>
+<p>ML, RAG, agentic workflows, analytics, computer vision and decision-support systems.</p>
+</div>
+<div class="node node-d">
+<small>04 / Execution</small>
+<strong>Product Delivery</strong>
+<p>Portfolio leadership, cross-functional teams, implementation, adoption and measurable outcomes.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="proof">
+<div class="shell proof-grid reveal">
+<div class="proof-item"><div class="proof-value">10+</div><div class="proof-label">Years across science, systems &amp; operations</div></div>
+<div class="proof-item"><div class="proof-value">1M+</div><div class="proof-label">Samples supported through scaled operations</div></div>
+<div class="proof-item"><div class="proof-value">$2M</div><div class="proof-label">Research portfolio managed</div></div>
+<div class="proof-item"><div class="proof-value">50%</div><div class="proof-label">Faster turnaround delivered</div></div>
+</div>
+</section>
+<section class="block architecture" id="architecture">
+<div class="shell">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow section-kicker">Operating Architecture</div>
+<h2 class="section-title">Not a career reset. A stack of connected capabilities.</h2>
+</div>
+<p class="section-copy">My advantage is the combination: domain depth, operational leadership, systems thinking, data and AI, and the delivery discipline required to move technology from concept into real-world use. Much of that experience was earned in scientific and regulated environments; the underlying capabilities apply wherever complex workflows, data and technology have to work together.</p>
+</div>
+<div class="architecture-grid reveal">
+<article class="arch-card" data-index="01">
+<div class="eyebrow">Domain</div>
+<h3>Scientific &amp; regulated environments</h3>
+<p>Microbiology, laboratory workflows, population-health research, quality systems and compliance-sensitive operations.</p>
+<div class="mini">GLP · HIPAA · IRB/IACUC · LIMS/LIS</div>
+</article>
+<article class="arch-card" data-index="02">
+<div class="eyebrow">Systems</div>
+<h3>Digital transformation &amp; integration</h3>
+<p>Multi-site system implementation, LIMS/ELN integration, workflow redesign, data movement and operational dashboards.</p>
+<div class="mini">LIMS · ELN · APIs · PostgreSQL · MongoDB</div>
+</article>
+<article class="arch-card" data-index="03">
+<div class="eyebrow">Intelligence</div>
+<h3>Applied AI &amp; machine learning</h3>
+<p>Production ML, RAG architectures, agentic systems, computer vision, NLP and predictive operational intelligence.</p>
+<div class="mini">PyTorch · LangChain · scikit-learn · FastAPI</div>
+</article>
+<article class="arch-card" data-index="04">
+<div class="eyebrow">Delivery</div>
+<h3>Portfolio &amp; product execution</h3>
+<p>Cross-functional delivery, budget and resource planning, risk management, process improvement and adoption.</p>
+<div class="mini">CAPM · Agile · Lean Six Sigma · DMAIC</div>
+</article>
+</div>
+</div>
+</section>
+<section class="block" id="profile">
+<div class="shell">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow section-kicker">Career Architecture</div>
+<h2 class="section-title">A decade of compounding experience.</h2>
+</div>
+<p class="section-copy">The story is progression: domain depth first, then analytics, systems delivery, operational leadership and applied intelligence.</p>
+</div>
+<div class="timeline">
+<div class="timeline-row reveal">
+<div class="phase">Foundation</div><div class="timeline-marker">01</div>
+<div><h3>Microbiology</h3><p>Built first-hand understanding of assays, protocols and the daily realities of laboratory operations. That domain foundation foundation behind every system built later.</p></div>
+</div>
+<div class="timeline-row reveal">
+<div class="phase">Discovery</div><div class="timeline-marker">02</div>
+<div><h3>Data Analytics &amp; Population Health</h3><p>Coordinated research and used Python, R and statistical analysis to turn laboratory and population-health data into operational and scientific insight.</p></div>
+</div>
+<div class="timeline-row reveal">
+<div class="phase">Scale</div><div class="timeline-marker">03</div>
+<div><h3>Project &amp; Operations Leadership</h3><p>Managed multi-million-dollar work, supported multi-site laboratory scale-up, deployed LIMS/LIS workflows and delivered 50% faster turnaround.</p></div>
+</div>
+<div class="timeline-row reveal">
+<div class="phase">Systems</div><div class="timeline-marker">04</div>
+<div><h3>Digital Systems &amp; Integration</h3><p>Moved from using scientific systems to designing how data, workflows and platforms connect across LIMS, ELN, APIs, databases and operational tooling.</p></div>
+</div>
+<div class="timeline-row reveal">
+<div class="phase">Intelligence</div><div class="timeline-marker">05</div>
+<div><h3>Applied AI</h3><p>Built production ML and agentic systems for scientific and healthcare contexts, combining technical delivery with domain and compliance awareness.</p></div>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- Mobile overlay + drawer -->
-  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
-  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
-    <ul>
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#analytics">Analytics</a></li>
-      <li><a href="#operations">Operations</a></li>
-      <li><a href="#ml-ai">ML/AI</a></li>
-      <li><a href="#tech">Tech Stack</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </aside>
+<section class="portfolio-hero" id="portfolio">
+<div class="shell reveal">
+<div class="eyebrow section-kicker">Selected Work / 2026</div>
+<h1>A portfolio of <em>systems, intelligence &amp; transformation.</em></h1>
+<p class="portfolio-intro">Selected work across enterprise transformation, applied AI, systems architecture and digital products. The projects come from demanding scientific and regulated environments, but the capabilities are broader: translating complex operations into scalable systems, intelligent workflows and measurable outcomes.</p>
+<div class="portfolio-nav">
+<a href="#transformation">Transformation</a><a href="#ai">AI &amp; ML</a><a href="#integration">Systems Integration</a><a href="#products">Digital Products</a>
+</div>
+</div>
+</section><section class="portfolio-section" id="transformation">
+<div class="shell">
+<div class="section-head reveal"><div><div class="eyebrow section-kicker">01 / Enterprise Transformation</div><h2 class="section-title">Scale, operations &amp; complex delivery.</h2></div><p class="section-copy">Transformation work where technology had to fit real operations, real teams, governance constraints and measurable business outcomes.</p></div>
+<div class="projects-grid">
+<article class="project-card reveal"><div class="project-type">Enterprise Systems &amp; Operations</div><h3>Enterprise Laboratory Transformation</h3><p>National COVID-19 scale-up across multiple sites with cross-functional LIMS/LIS deployment and 15+ person team management.</p><div class="metrics"><span class="metric">1M+ Samples</span><span class="metric">50% Faster TAT</span><span class="metric">95% Accuracy</span><span class="metric">Government Contract</span></div><p class="stack"><strong>Systems:</strong> LIMS/LIS · DMAIC · Lean Six Sigma · Quality Systems</p></article>
+<article class="project-card reveal"><div class="project-type">Portfolio &amp; Operations Strategy</div><h3>Research Portfolio Optimization</h3><p>$2M NIH research portfolio supported with operational dashboards, workflow re-engineering, forecasting and compliance controls.</p><div class="metrics"><span class="metric">$2M Portfolio</span><span class="metric">20% Better Forecasting</span><span class="metric">100% Compliance</span></div><p class="stack"><strong>Systems:</strong> Python · Excel · HIPAA / IRB / IACUC</p></article>
+</div>
+</div>
+</section><section class="portfolio-section" id="ai">
+<div class="shell">
+<div class="section-head reveal"><div><div class="eyebrow section-kicker">02 / Applied Intelligence</div><h2 class="section-title">AI designed around real workflows.</h2></div><p class="section-copy">Agentic systems, production ML and deep learning that demonstrate reusable patterns in reasoning, prediction, retrieval, automation and decision support.</p></div>
+<div class="projects-grid">
+<article class="project-card reveal"><div class="project-type">Agentic Decision System</div><h3>Medical AI Agent</h3><p>Autonomous clinical decision-support system using multi-step reasoning, five clinical tools, RAG architecture and a vector database of medical guidelines.</p><div class="metrics"><span class="metric">Agentic AI</span><span class="metric">RAG Architecture</span><span class="metric">5 Clinical Tools</span></div><p class="stack"><strong>Stack:</strong> LangChain · GPT-4 · ChromaDB · FastAPI · Streamlit</p><div class="links"><a class="text-link" href="https://github.com/tobilola/medical-ai-agent" rel="noopener" target="_blank">Code ↗</a><a class="text-link" href="https://medical-ai-agent.onrender.com" rel="noopener" target="_blank">Demo ↗</a></div></article>
+<article class="project-card reveal"><div class="project-type">Predictive Operations Platform</div><h3>Requiva Lab Management System</h3><p>Production laboratory management system used by a University at Buffalo lab, with five ML models for predictive reordering, forecasting, anomaly detection and vendor optimization.</p><div class="metrics"><span class="metric">Production System</span><span class="metric">5 ML Models</span><span class="metric">NIH Compliance</span></div><p class="stack"><strong>Stack:</strong> Python · Streamlit · Firebase · scikit-learn · Pandas</p><div class="links"><a class="text-link" href="https://github.com/tobilola/Requiva" rel="noopener" target="_blank">Code ↗</a></div></article>
+<article class="project-card reveal"><div class="project-type">Computer Vision System</div><h3>PneumoniaNet AI</h3><p>Production-style pneumonia detection system with a custom CNN architecture, ResNet50 backbone, spatial attention and a complete medical-image training pipeline.</p><div class="metrics"><span class="metric">PyTorch</span><span class="metric">Transfer Learning</span><span class="metric">Custom Architecture</span></div><p class="stack"><strong>Stack:</strong> PyTorch · torchvision · ResNet50 · React · Python · AdamW</p><div class="links"><a class="text-link" href="https://github.com/tobilola/pneumonianet-ai" rel="noopener" target="_blank">Code ↗</a></div></article>
+<article class="project-card reveal"><div class="project-type">NLP + OCR</div><h3>Regulatory Compliance Tracker</h3><p>Automated compliance monitoring with OCR and NLP, using five ML models for document classification, compliance scoring and gap analysis.</p><div class="metrics"><span class="metric">5 ML Models</span><span class="metric">94.5% Accuracy</span><span class="metric">Real-time Dashboard</span></div><p class="stack"><strong>Stack:</strong> Tesseract OCR · scikit-learn · spaCy · Transformers · React</p><div class="links"><a class="text-link" href="https://github.com/tobilola/compliance-tracker" rel="noopener" target="_blank">Code ↗</a></div></article>
+</div>
+</div>
+</section><section class="portfolio-section" id="integration">
+<div class="shell">
+<div class="section-head reveal"><div><div class="eyebrow section-kicker">03 / Systems Architecture</div><h2 class="section-title">The connective tissue between platforms.</h2></div><p class="section-copy">Architecture and integration work focused on reliable data movement, platform interoperability, workflow continuity and governance-aware design.</p></div>
+<div class="projects-grid">
+<article class="project-card reveal"><div class="project-type">Systems Integration</div><h3>LIMS / ELN Integration Platform</h3><p>Middleware for bidirectional data synchronization between LIMS and ELN, with ML for anomaly detection, entity extraction and compliance scoring.</p><div class="metrics"><span class="metric">3 ML Models</span><span class="metric">FDA 21 CFR Part 11</span><span class="metric">1000+ Samples Daily</span></div><p class="stack"><strong>Stack:</strong> FastAPI · PostgreSQL · MongoDB · Docker · scikit-learn · spaCy</p><div class="links"><a class="text-link" href="https://github.com/tobilola/LIMS-ELN_Integration" rel="noopener" target="_blank">Code ↗</a></div></article>
+</div>
+</div>
+</section><section class="portfolio-section" id="products">
+<div class="shell">
+<div class="section-head reveal"><div><div class="eyebrow section-kicker">04 / Digital Products</div><h2 class="section-title">Interfaces for complex information.</h2></div><p class="section-copy">Product work that turns complex data and operational requirements into usable, navigable experiences.</p></div>
+<div class="projects-grid">
+<article class="project-card reveal"><div class="project-type">Data Product &amp; UX</div><h3>Patient Health Dashboard</h3><p>Responsive healthcare dashboard for health metrics, medications and laboratory results, with real-time data synchronization and interactive visualizations.</p><div class="metrics"><span class="metric">Real-time Sync</span><span class="metric">Mobile-first</span><span class="metric">Live Demo</span></div><p class="stack"><strong>Stack:</strong> React 18 · Vite · Tailwind CSS · Firebase Firestore · Recharts</p><div class="links"><a class="text-link" href="https://github.com/tobilola/patient-health-dashboard" rel="noopener" target="_blank">Code ↗</a><a class="text-link" href="https://vocal-baklava-ce3dba.netlify.app/" rel="noopener" target="_blank">Demo ↗</a></div></article>
+</div>
+<a class="btn btn-secondary home-return" href="index.html">← Return Home</a>
+</div>
+</section><section class="contact" id="contact">
+<div class="shell contact-grid">
+<div class="reveal">
+<div class="eyebrow section-kicker">Next Chapter</div>
+<h2>For work where <em>complex systems meet intelligent technology.</em></h2>
+</div>
+<div class="contact-panel reveal">
+<p>Open to senior opportunities across applied AI, systems architecture, digital transformation, technical product/program delivery, enterprise technology and life-sciences technology.</p>
+<div class="contact-links">
+<a class="contact-link" href="mailto:hello@tobiogunbowale.com">Email</a>
+<a class="contact-link" href="https://www.linkedin.com/in/tobiogunbowale" rel="noopener" target="_blank">LinkedIn ↗</a>
+<a class="contact-link" href="https://github.com/tobilola" rel="noopener" target="_blank">GitHub ↗</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="shell footer-inner">
+<span>© 2026 Tobi Ogunbowale</span>
+<span>Applied AI · Systems Architecture · Digital Transformation</span>
+</div>
+</footer>
 
-  <!-- Navigation -->
-  <nav id="nav">
-    <div class="logo">T.Ogunbowale</div>
+<script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
 
-    <ul class="nav-links" aria-label="Primary navigation">
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#analytics">Analytics</a></li>
-      <li><a href="#operations">Operations</a></li>
-      <li><a href="#ml-ai">ML/AI</a></li>
-      <li><a href="#tech">Tech Stack</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
-      <div class="hamburger-lines" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </div>
-    </button>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span>Available for Lab Informatics & AI Roles</span>
-      </div>
-      <h1>
-        From Lab Bench<br/>
-        to <span class="gradient-text">AI Innovation</span>
-      </h1>
-      <p class="hero-subtitle">
-        <span class="highlight">Microbiologist turned AI Engineer.</span>
-        I don't just build models—I build intelligent systems that understand lab workflows, regulatory compliance, and the science that makes healthcare work.
-      </p>
-      <div class="hero-cta">
-        <a href="#journey" class="btn btn-primary">Explore My Journey</a>
-        <a href="#ml-ai" class="btn btn-secondary">View AI Projects</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="stats reveal">
-    <div class="stats-grid">
-      <div class="stat-card">
-        <span class="stat-number">10+</span>
-        <span class="stat-label">Years Experience</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">1M+</span>
-        <span class="stat-label">Samples Processed</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">$2M</span>
-        <span class="stat-label">Portfolio Managed</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">94.5%</span>
-        <span class="stat-label">ML Model Accuracy</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Journey Timeline -->
-  <section id="journey" class="journey">
-    <div class="section-header reveal">
-      <div class="section-tag">// The Evolution</div>
-      <h2 class="section-title">The Path to Lab Informatics AI</h2>
-      <p class="section-description">
-        A decade-long journey from understanding biological systems to building AI systems that transform them.
-      </p>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="timeline-content">
-          <div class="timeline-phase">Phase 01 // Foundation</div>
-          <h3 class="timeline-title">Microbiology</h3>
-          <p class="timeline-description">
-            Started in the lab running assays, understanding protocols, and living the daily reality of laboratory operations. This deep domain knowledge became my foundation.
-          </p>
-        </div>
-        <div class="timeline-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="m13 6 3 7h1"/><path d="M6 9v6"/><path d="m21 19-3-6h-1"/></svg>
-        </div>
-        <div class="timeline-placeholder"></div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-placeholder"></div>
-        <div class="timeline-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-phase">Phase 02 // Discovery</div>
-          <h3 class="timeline-title">Data Analytics</h3>
-          <p class="timeline-description">
-            Discovered the power of data through population health research. Coordinated international studies, learned Python and R, saw how analytics could transform raw lab data into insights.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-content">
-          <div class="timeline-phase">Phase 03 // Scale</div>
-          <h3 class="timeline-title">Project Management</h3>
-          <p class="timeline-description">
-            Scaled operations during COVID-19. Managed multi-million dollar portfolios, deployed LIMS across sites, delivered 50% faster turnaround times. Earned CAPM certification.
-          </p>
-        </div>
-        <div class="timeline-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-        </div>
-        <div class="timeline-placeholder"></div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-placeholder"></div>
-        <div class="timeline-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M12 13h4"/><path d="M12 18h6a2 2 0 0 1 2 2v1"/><path d="M12 8h8"/><path d="M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></svg>
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-phase">Phase 04 // Innovation</div>
-          <h3 class="timeline-title">Machine Learning</h3>
-          <p class="timeline-description">
-            Built production ML systems for lab operations. Developed expertise in traditional ML, generative AI, and agentic systems. Created AI that understands both science AND workflows.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-content">
-          <div class="timeline-phase">Phase 05 // Vision</div>
-          <h3 class="timeline-title">Lab Informatics AI</h3>
-          <p class="timeline-description">
-            Bringing it all together: domain expertise + operational excellence + AI innovation = intelligent lab informatics systems that transform healthcare operations.
-          </p>
-        </div>
-        <div class="timeline-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-        </div>
-        <div class="timeline-placeholder"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Data Analytics Projects -->
-  <section id="analytics" class="projects">
-    <div class="section-header reveal">
-      <div class="section-tag">// Capability Area 01</div>
-      <h2 class="section-title">Data Analytics & Population Health</h2>
-    </div>
-
-    <div class="projects-grid">
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-          International Research
-        </div>
-        <h3 class="project-title">Global Health Intelligence Partnership</h3>
-        <p class="project-description">
-          Multi-national hepatitis epidemiological intelligence initiative coordinating data analytics across Nigeria–Germany partnership.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">500+ Participants</span>
-          <span class="metric-badge">International Collaboration</span>
-          <span class="metric-badge">Policy Impact</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> R, Python, Statistical Modeling, Epidemiology</p>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          Population Health
-        </div>
-        <h3 class="project-title">Clinical Population Health Analytics</h3>
-        <p class="project-description">
-          Multi-jurisdictional population health research with strategic field operations and advanced analytics across 5 local government areas.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">5 Jurisdictions</span>
-          <span class="metric-badge">Multi-Site Operations</span>
-          <span class="metric-badge">IRB Compliance</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> R, Python, Statistical Modeling, Population Health</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Operations Projects -->
-  <section id="operations" class="projects">
-    <div class="section-header reveal">
-      <div class="section-tag">// Capability Area 02</div>
-      <h2 class="section-title">Operations & Quality Leadership</h2>
-    </div>
-
-    <div class="projects-grid">
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
-          Enterprise Scale
-        </div>
-        <h3 class="project-title">Enterprise Laboratory Transformation</h3>
-        <p class="project-description">
-          National COVID-19 scale-up across multiple sites with cross-functional LIMS/LIS deployment and 15+ person team management.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">1M+ Samples</span>
-          <span class="metric-badge">50% Faster TAT</span>
-          <span class="metric-badge">95% Accuracy</span>
-          <span class="metric-badge">Govt Contract</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> LIMS/LIS, DMAIC, Lean Six Sigma, Quality Systems</p>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-          Research Operations
-        </div>
-        <h3 class="project-title">Research Portfolio Optimization</h3>
-        <p class="project-description">
-          $2M NIH research portfolio with operational dashboards, workflow re-engineering, and 100% regulatory compliance.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">$2M Portfolio</span>
-          <span class="metric-badge">20% Better Forecasting</span>
-          <span class="metric-badge">100% Compliance</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> Python, Excel, HIPAA/IRB/IACUC Compliance</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ML/AI Projects -->
-  <section id="ml-ai" class="projects">
-    <div class="section-header reveal">
-      <div class="section-tag">// Capability Area 03</div>
-      <h2 class="section-title">Machine Learning & AI Engineering</h2>
-    </div>
-
-    <div class="projects-grid">
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
-          Agentic AI
-        </div>
-        <h3 class="project-title">Medical AI Agent</h3>
-        <p class="project-description">
-          Autonomous AI system for clinical decision support using multi-step reasoning. Five clinical tools with RAG architecture and vector database of medical guidelines.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">Agentic AI</span>
-          <span class="metric-badge">RAG Architecture</span>
-          <span class="metric-badge">5 Clinical Tools</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> LangChain, GPT-4, ChromaDB, FastAPI, Streamlit</p>
-        <div class="project-links">
-          <a href="https://github.com/tobilola/medical-ai-agent" target="_blank" rel="noopener noreferrer" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            Code
-          </a>
-          <a href="https://medical-ai-agent.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            Demo
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
-          Deep Learning
-        </div>
-        <h3 class="project-title">PneumoniaNet AI: PyTorch Healthcare System</h3>
-        <p class="project-description">
-          Production-grade pneumonia detection system demonstrating advanced PyTorch proficiency. Custom CNN architecture with ResNet50 backbone, spatial attention mechanism, and comprehensive training pipeline for medical image analysis.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">PyTorch 2.1+</span>
-          <span class="metric-badge">Transfer Learning</span>
-          <span class="metric-badge">Custom Architecture</span>
-          <span class="metric-badge">Portfolio Demo</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> PyTorch, torchvision, ResNet50, React, Python, AdamW</p>
-        <div class="project-links">
-          <a href="https://github.com/tobilola/pneumonianet-ai" target="_blank" rel="noopener noreferrer" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            Code
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
-          Production ML
-        </div>
-        <h3 class="project-title">Requiva Lab Management System</h3>
-        <p class="project-description">
-          Production system used by University at Buffalo lab. Five ML models for predictive reordering, spending forecasts, anomaly detection, and vendor optimization.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">Production System</span>
-          <span class="metric-badge">5 ML Models</span>
-          <span class="metric-badge">NIH Compliance</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> Python, Streamlit, Firebase, Scikit-learn, Pandas</p>
-        <div class="project-links">
-          <a href="https://github.com/tobilola/Requiva" target="_blank" rel="noopener noreferrer" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            Code
-          </a>
-          <span class="project-note" style="color: var(--electric-teal); font-size: 0.9rem; margin-left: 12px;">
-            Production System - In Active Use
-          </span>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
-          Systems Integration
-        </div>
-        <h3 class="project-title">LIMS-ELN Integration Platform</h3>
-        <p class="project-description">
-          Middleware for bidirectional data synchronization between LIMS and ELN. Three ML models for anomaly detection, entity extraction, and compliance scoring.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">3 ML Models</span>
-          <span class="metric-badge">FDA 21 CFR Part 11</span>
-          <span class="metric-badge">1000+ Samples Daily</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> FastAPI, PostgreSQL, MongoDB, Docker, Scikit-learn, spaCy</p>
-        <div class="project-links">
-          <a href="https://github.com/tobilola/LIMS-ELN_Integration" target="_blank" rel="noopener noreferrer" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            Code
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/></svg>
-          Healthcare App
-        </div>
-        <h3 class="project-title">Patient Health Dashboard</h3>
-        <p class="project-description">
-          Modern, responsive healthcare dashboard for tracking health metrics, medications, and lab results. Built with React and Firebase Firestore for real-time data synchronization with interactive visualizations.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">Real-time Sync</span>
-          <span class="metric-badge">Mobile-First</span>
-          <span class="metric-badge">Live Demo</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> React 18, Vite, Tailwind CSS, Firebase Firestore, Recharts</p>
-        <div class="project-links">
-          <a href="https://github.com/tobilola/patient-health-dashboard" target="_blank" rel="noopener noreferrer" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            Code
-          </a>
-          <a href="https://vocal-baklava-ce3dba.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            Demo
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 8h8"/><path d="M7 12h10"/><path d="M7 16h6"/></svg>
-          NLP + OCR
-        </div>
-        <h3 class="project-title">Regulatory Compliance Tracker</h3>
-        <p class="project-description">
-          Automated compliance monitoring with OCR and NLP. Five ML models achieving 94.5% accuracy for document classification, compliance scoring, and gap analysis.
-        </p>
-        <div class="project-metrics">
-          <span class="metric-badge">5 ML Models</span>
-          <span class="metric-badge">94.5% Accuracy</span>
-          <span class="metric-badge">Real-time Dashboard</span>
-        </div>
-        <p class="project-tech"><strong>Stack:</strong> Tesseract OCR, Scikit-learn, spaCy, Transformers, React</p>
-        <div class="project-links">
-          <a href="https://github.com/tobilola/compliance-tracker" target="_blank" rel="noopener noreferrer" class="project-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            Code
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tech Stack -->
-  <section id="tech" class="tech-stack">
-    <div class="section-header reveal">
-      <div class="section-tag">// Complete Arsenal</div>
-      <h2 class="section-title">Technical Stack</h2>
-      <p class="section-description">
-        Full-stack expertise spanning laboratory science, data engineering, machine learning, and cloud infrastructure.
-      </p>
-    </div>
-
-    <div class="tech-grid">
-      <div class="tech-category reveal">
-        <div class="tech-category-header">
-          <div class="tech-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-          </div>
-          <h3>Laboratory Domain</h3>
-        </div>
-        <ul class="tech-list">
-          <li>LIMS/LIS Systems Implementation</li>
-          <li>Electronic Lab Notebooks (ELN)</li>
-          <li>Quality Management Systems (QMS)</li>
-          <li>GLP, ISO 17025</li>
-          <li>HIPAA, CLIA, IACUC Compliance</li>
-          <li>Laboratory Workflow Optimization</li>
-        </ul>
-      </div>
-
-      <div class="tech-category reveal">
-        <div class="tech-category-header">
-          <div class="tech-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
-          </div>
-          <h3>Data & Analytics</h3>
-        </div>
-        <ul class="tech-list">
-          <li>Python (Pandas, NumPy, Matplotlib)</li>
-          <li>R (ggplot2, dplyr, tidyverse)</li>
-          <li>SQL (PostgreSQL, MongoDB)</li>
-          <li>Data Visualization (Streamlit)</li>
-          <li>Statistical Analysis & Epidemiology</li>
-          <li>ETL Pipeline Development</li>
-        </ul>
-      </div>
-
-      <div class="tech-category reveal">
-        <div class="tech-category-header">
-          <div class="tech-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
-          </div>
-          <h3>Machine Learning</h3>
-        </div>
-        <ul class="tech-list">
-          <li>PyTorch (Deep Learning, Computer Vision)</li>
-          <li>torchvision (Transfer Learning, ResNet)</li>
-          <li>Scikit-learn (Classification, Regression)</li>
-          <li>XGBoost, Random Forest, Gradient Boosting</li>
-          <li>Time-Series Forecasting (ARIMA, Prophet)</li>
-          <li>Anomaly Detection (Isolation Forest)</li>
-          <li>Feature Engineering & Selection</li>
-          <li>Model Evaluation & Hyperparameter Tuning</li>
-        </ul>
-      </div>
-
-      <div class="tech-category reveal">
-        <div class="tech-category-header">
-          <div class="tech-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-          </div>
-          <h3>AI & NLP</h3>
-        </div>
-        <ul class="tech-list">
-          <li>LangChain (Agentic AI, RAG Systems)</li>
-          <li>OpenAI GPT-4 API Integration</li>
-          <li>Vector Databases (ChromaDB)</li>
-          <li>spaCy (NER, Entity Extraction)</li>
-          <li>Transformers (Hugging Face)</li>
-          <li>Prompt Engineering</li>
-        </ul>
-      </div>
-
-      <div class="tech-category reveal">
-        <div class="tech-category-header">
-          <div class="tech-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-          </div>
-          <h3>Cloud & DevOps</h3>
-        </div>
-        <ul class="tech-list">
-          <li>Docker & Containerization</li>
-          <li>Firebase & Cloud Functions</li>
-          <li>Cloud Deployment (Render)</li>
-          <li>Git & GitHub</li>
-        </ul>
-      </div>
-
-      <div class="tech-category reveal">
-        <div class="tech-category-header">
-          <div class="tech-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3>Development</h3>
-        </div>
-        <ul class="tech-list">
-          <li>Python, FastAPI, Flask</li>
-          <li>React, JavaScript</li>
-          <li>HTML/CSS</li>
-          <li>Git, GitHub, Version Control</li>
-          <li>REST APIs & Microservices</li>
-        </ul>
-      </div>
-
-      <div class="tech-category reveal">
-        <div class="tech-category-header">
-          <div class="tech-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Project Management</h3>
-        </div>
-        <ul class="tech-list">
-          <li>CAPM Certification (PMI)</li>
-          <li>Agile/Scrum Methodologies</li>
-          <li>Lean Six Sigma, DMAIC</li>
-          <li>Stakeholder Management</li>
-          <li>Budget & Resource Planning</li>
-          <li>Risk Management & Mitigation</li>
-        </ul>
-      </div>
-
-      <div class="tech-category reveal">
-        <div class="tech-category-header">
-          <div class="tech-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3>Security & Compliance</h3>
-        </div>
-        <ul class="tech-list">
-          <li>HIPAA Compliance Implementation</li>
-          <li>Data Privacy & Security Protocols</li>
-          <li>Audit Trail Management</li>
-          <li>IRB/IACUC Regulatory Frameworks</li>
-          <li>GLP/GMP Quality Standards</li>
-          <li>FDA Validation & Documentation</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="contact-content reveal">
-      <h2 class="contact-title">Let's Build Something Exceptional</h2>
-      <div class="contact-links">
-        <a href="mailto:hello@tobiogunbowale.com" class="contact-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          hello@tobiogunbowale.com
-        </a>
-
-        <a href="https://www.linkedin.com/in/oluwatobilolaogunbowale/" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-
-        <a href="https://github.com/tobilola" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-          GitHub
-        </a>
-      </div>
-
-      <div class="hero-cta" style="justify-content: center; margin-top: 48px;">
-        <a href="https://drive.google.com/file/d/YOUR_RESUME_ID" class="btn btn-primary" style="text-decoration: none;">
-          Download Resume
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Tobi Ogunbowale. Built with purpose. Powered by curiosity.</p>
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const nav = document.getElementById('nav');
-
-      // ===== Mobile nav =====
-      const hamburgerBtn = document.getElementById('hamburgerBtn');
-      const mobileOverlay = document.getElementById('mobileOverlay');
-      const mobileDrawer = document.getElementById('mobileDrawer');
-
-      const openNav = () => {
-        document.body.classList.add('nav-open');
-        hamburgerBtn.setAttribute('aria-expanded', 'true');
-        hamburgerBtn.setAttribute('aria-label', 'Close menu');
-      };
-
-      const closeNav = () => {
-        document.body.classList.remove('nav-open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-        hamburgerBtn.setAttribute('aria-label', 'Open menu');
-      };
-
-      hamburgerBtn.addEventListener('click', () => {
-        const isOpen = document.body.classList.contains('nav-open');
-        isOpen ? closeNav() : openNav();
-      });
-
-      mobileOverlay.addEventListener('click', closeNav);
-
-      // Close menu when clicking a mobile link
-      mobileDrawer.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', () => closeNav());
-      });
-
-      // Close on ESC
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && document.body.classList.contains('nav-open')) closeNav();
-      });
-
-      // ===== Smooth scroll for in-page anchors (desktop + any others) =====
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          const href = this.getAttribute('href');
-          if (!href || href === '#') return;
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            obs.unobserve(entry.target);
           }
         });
-      });
-
-      // ===== Scroll reveal (FIXED) =====
-      const revealElements = Array.from(document.querySelectorAll('.reveal'));
-      const updateReveal = () => {
-        const windowHeight = window.innerHeight;
-        revealElements.forEach(el => {
-          const rect = el.getBoundingClientRect();
-          const inView = rect.top < windowHeight * 0.85 && rect.bottom > 0;
-          if (inView) el.classList.add('active');
-        });
-      };
-
-      // Throttle scroll work with rAF
-      let ticking = false;
-      const onScroll = () => {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(() => {
-            nav.classList.toggle('scrolled', window.scrollY > 100);
-            updateReveal();
-            ticking = false;
-          });
-        }
-      };
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', updateReveal);
-
-      // Initial paint
-      nav.classList.toggle('scrolled', window.scrollY > 100);
-      updateReveal();
-    });
+      }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+      reveals.forEach(el => observer.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('active'));
+    }
   </script>
 </body>
 </html>
